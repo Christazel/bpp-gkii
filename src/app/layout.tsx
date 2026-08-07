@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Badan Pengurus Pusat GKII' }],
   icons: {
     icon: '/icon.png',
-    shortcut: '/favicon.ico',
+    shortcut: '/icon.png',
     apple: '/apple-icon.png',
   },
   openGraph: {
