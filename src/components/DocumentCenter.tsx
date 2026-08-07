@@ -9,6 +9,8 @@ export default function DocumentCenter() {
     title: string;
     size: string;
     desc: string;
+    downloadUrl: string;
+    format: string;
   } | null>(null);
   const [toastMsg, setToastMsg] = useState<string | null>(null);
 
@@ -56,6 +58,8 @@ export default function DocumentCenter() {
                       title: doc.title,
                       size: doc.fileSize,
                       desc: doc.description,
+                      downloadUrl: doc.downloadUrl,
+                      format: doc.format,
                     })
                   }
                   className="text-xs font-bold text-[#0c35a6] hover:underline flex items-center"
@@ -92,21 +96,23 @@ export default function DocumentCenter() {
               <FileCheck2 className="w-10 h-10 text-[#0c35a6] mx-auto opacity-70" />
               <p className="text-xs font-semibold text-slate-700">Dokumen Terverifikasi Digital BPP GKII</p>
               <span className="inline-block text-[10px] bg-white px-3 py-1 rounded-full text-slate-500 border border-slate-200">
-                Ukuran File: {modalData.size}
+                Ukuran File: {modalData.size} • Format: {modalData.format}
               </span>
             </div>
 
             <div className="flex gap-3">
-              <button
+              <a
+                href={modalData.downloadUrl}
+                download
                 onClick={() => {
                   setModalData(null);
-                  triggerToast('Memulai unduhan dokumen...');
+                  triggerToast(`Memulai unduhan berkas ${modalData.format}...`);
                 }}
                 className="w-full py-3 rounded-xl bg-[#0c35a6] hover:bg-[#06195c] text-white font-bold text-xs transition-colors flex items-center justify-center space-x-2 shadow-md"
               >
                 <Download className="w-4 h-4" />
-                <span>Unduh Berkas PDF Lengkap</span>
-              </button>
+                <span>Unduh Berkas ({modalData.format}) Lengkap</span>
+              </a>
             </div>
           </div>
         </div>

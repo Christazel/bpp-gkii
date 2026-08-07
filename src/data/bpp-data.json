@@ -16,7 +16,7 @@
       "description": "Aturan dasar dan pedoman organisasi BPP GKII.",
       "fileSize": "4.2 MB",
       "format": "PDF",
-      "downloadUrl": "#"
+      "downloadUrl": "/pdf/TGTRT_GKII_2026.pdf"
     },
     {
       "id": "doc-2",
@@ -25,7 +25,7 @@
       "description": "Pedoman dan arahan operasional pelayanan tahun berjalan.",
       "fileSize": "1.1 MB",
       "format": "PDF",
-      "downloadUrl": "#"
+      "downloadUrl": "/pdf/SE_BPP_042_2026.pdf"
     },
     {
       "id": "doc-3",
@@ -34,7 +34,7 @@
       "description": "Formulir isian pendataan keanggotaan gereja lokal baru.",
       "fileSize": "520 KB",
       "format": "DOCX",
-      "downloadUrl": "#"
+      "downloadUrl": "/pdf/Form_Pendataan_Gereja_Lokal.docx"
     }
   ],
   "officers": [
