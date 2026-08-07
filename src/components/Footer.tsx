@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, ExternalLink } from 'lucide-react';
+import { MapPin, Phone, ExternalLink } from 'lucide-react';
 import bppData from '@/data/bpp-data.json';
 
 export default function Footer() {
@@ -65,10 +65,6 @@ export default function Footer() {
                 <li className="flex items-center">
                   <Phone className="w-4 h-4 mr-2 text-[#D4AF37] shrink-0" />
                   <span>021-31902510</span>
-                </li>
-                <li className="flex items-center">
-                  <Mail className="w-4 h-4 mr-2 text-[#D4AF37] shrink-0" />
-                  <span>info@kemah-injil.org</span>
                 </li>
               </ul>
             </div>
