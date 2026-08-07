@@ -60,15 +60,15 @@ export default function Footer() {
               <ul className="space-y-2 text-xs">
                 <li className="flex items-start">
                   <MapPin className="w-4 h-4 mr-2 text-[#D4AF37] shrink-0 mt-0.5" />
-                  Gedung BPP GKII, Jl. Kebon Sirih No. 40, Jakarta Pusat 10110
+                  <span>Jl. Jambrut No.24 7, RT.7/RW.2, Kenari, Kec. Senen, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10430, Indonesia</span>
                 </li>
                 <li className="flex items-center">
                   <Phone className="w-4 h-4 mr-2 text-[#D4AF37] shrink-0" />
-                  (021) 345-6789 (Sekretariat)
+                  <span>021-31902510</span>
                 </li>
                 <li className="flex items-center">
                   <Mail className="w-4 h-4 mr-2 text-[#D4AF37] shrink-0" />
-                  bpp@kemah-injil.org
+                  <span>info@kemah-injil.org</span>
                 </li>
               </ul>
             </div>
