@@ -1,4 +1,4 @@
-import { Building2, MapPin, Phone, Mail, ExternalLink, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, ExternalLink, MessageCircle } from 'lucide-react';
 import bppData from '@/data/bpp-data.json';
 
 export default function Footer() {
@@ -10,10 +10,17 @@ export default function Footer() {
             {/* Col 1 */}
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-xl bg-[#0c35a6] flex items-center justify-center text-[#D4AF37] font-bold text-xl border border-white/20">
-                  <Building2 className="w-5 h-5 stroke-[2.5]" />
+                <img
+                  src="/gkii-logo-emblem.png"
+                  alt="Gereja Kemah Injil Indonesia Emblem"
+                  className="w-11 h-11 object-contain p-1 rounded-xl bg-white/10 border border-white/20"
+                />
+                <div className="flex flex-col">
+                  <span className="font-extrabold text-lg text-white tracking-tight leading-none">BPP GKII</span>
+                  <span className="text-[9px] uppercase font-semibold text-[#D4AF37] mt-1">
+                    Badan Pengurus Pusat
+                  </span>
                 </div>
-                <span className="font-extrabold text-xl text-white tracking-tight">BPP GKII</span>
               </div>
               <p className="text-xs leading-relaxed text-slate-300">
                 Badan Pengurus Pusat Gereja Kemah Injil Indonesia (GKII). Sekretariat Jenderal Administrasi Kebijakan & Kelembagaan Nasional.

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Building2, Download, Menu, ExternalLink } from 'lucide-react';
+import { Download, Menu, ExternalLink } from 'lucide-react';
 import bppData from '@/data/bpp-data.json';
 
 export default function Navbar() {
@@ -35,17 +35,17 @@ export default function Navbar() {
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/70 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Logo BPP GKII */}
+            {/* Official Logo BPP GKII */}
             <a href="#beranda" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 rounded-xl bg-[#0c35a6] flex items-center justify-center text-[#D4AF37] font-bold text-xl shadow-md group-hover:scale-105 transition-transform shrink-0">
-                <Building2 className="w-5 h-5 stroke-[2.5]" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-extrabold text-xl tracking-tight text-[#0c35a6] leading-none">BPP GKII</span>
-                <span className="text-[9px] uppercase font-bold tracking-wider text-[#B8962E] mt-1">
-                  Badan Pengurus Pusat GKII
-                </span>
-              </div>
+              <img
+                src="/gkii-logo-long.png"
+                alt="Gereja Kemah Injil Indonesia Logo"
+                className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform"
+              />
+              <div className="h-8 w-px bg-slate-200 hidden sm:block"></div>
+              <span className="hidden sm:inline-block px-2.5 py-1 bg-[#0c35a6]/10 text-[#0c35a6] font-extrabold text-[11px] rounded-lg tracking-wider uppercase">
+                BPP PUSAT
+              </span>
             </a>
 
             {/* Desktop Navigation Menu */}
