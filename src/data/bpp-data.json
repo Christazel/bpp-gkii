@@ -13,7 +13,7 @@
       "id": "doc-1",
       "category": "Ketetapan Sidang Raya",
       "title": "Tata Gereja & Tata Rumah Tangga (TGTRT)",
-      "description": "Aturan dasar dan pedoman organisasi BPP GKII.",
+      "description": "Aturan dasar dan pedoman organisasi BPP GKII untuk seluruh jemaat dan pengurus.",
       "fileSize": "4.2 MB",
       "format": "PDF",
       "downloadUrl": "/pdf/TGTRT_GKII_2026.pdf"
@@ -22,7 +22,7 @@
       "id": "doc-2",
       "category": "Surat Edaran BPP",
       "title": "SE BPP No. 042/SE/BPP-GKII/2026",
-      "description": "Pedoman dan arahan operasional pelayanan tahun berjalan.",
+      "description": "Pedoman dan arahan operasional pelayanan tahun berjalan bagi seluruh gereja lokal.",
       "fileSize": "1.1 MB",
       "format": "PDF",
       "downloadUrl": "/pdf/SE_BPP_042_2026.pdf"
@@ -31,87 +31,167 @@
       "id": "doc-3",
       "category": "Formulir Pendataan",
       "title": "Form Pendataan Gereja Lokal Baru",
-      "description": "Formulir isian pendataan keanggotaan gereja lokal baru.",
+      "description": "Formulir isian resmi pendataan keanggotaan dan registrasi gereja lokal baru.",
       "fileSize": "520 KB",
       "format": "DOCX",
       "downloadUrl": "/pdf/Form_Pendataan_Gereja_Lokal.docx"
+    },
+    {
+      "id": "doc-4",
+      "category": "Bagan Organisasi",
+      "title": "Organigram Struktur BPP GKII 2026",
+      "description": "Bagan struktur kepengurusan Badan Pengurus Pusat periode berjalan.",
+      "fileSize": "850 KB",
+      "format": "PDF",
+      "downloadUrl": "/pdf/Organigram_BPP_GKII.pdf"
     }
   ],
   "officers": [
     {
       "id": "off-1",
       "role": "Ketua Umum",
-      "name": "[Nama Ketua Umum]",
+      "name": "Pdt. Hussain Shahz Diman, S.Th., S.H., M.H., M.Ag.",
       "title": "Ketua Umum BPP GKII",
-      "description": "Pimpinan umum & arah kebijakan nasional."
+      "description": "Pimpinan umum & penetap arah kebijakan nasional kelembagaan BPP GKII."
     },
     {
       "id": "off-2",
-      "role": "Sekretaris",
-      "name": "[Nama Sekretaris Umum]",
+      "role": "Sekretaris Umum",
+      "name": "Pdt. Dr. Nasokhili Giawa, M.Th.",
       "title": "Sekretaris Umum BPP GKII",
-      "description": "Pengelola tata kelola administrasi pusat."
+      "description": "Pengelola tata kelola administrasi pusat dan koordinator sekretariat BPP."
     },
     {
       "id": "off-3",
-      "role": "Bendahara",
-      "name": "[Nama Bendahara Umum]",
+      "role": "Bendahara Umum",
+      "name": "Pdt. Dr. Krido Siswanto, M.Th.",
       "title": "Bendahara Umum BPP GKII",
-      "description": "Pengawas perbendaharaan & anggaran."
-    },
-    {
-      "id": "off-4",
-      "role": "Ketua Dept.",
-      "name": "[Nama Ketua Dept.]",
-      "title": "Ketua Dept. Misi & Pelayanan",
-      "description": "Koordinator utusan Injil & pelayanan daerah."
+      "description": "Pengawas perbendaharaan, keuangan, & penganggaran kelembagaan nasional."
     }
   ],
   "regions": [
-    { "id": "reg-1", "code": "Wilayah I", "title": "Sumatera & Riau", "leader": "[Nama Ketua Wilayah]", "group": "jawa" },
-    { "id": "reg-2", "code": "Wilayah II", "title": "DKI Jakarta & Banten", "leader": "[Nama Ketua Wilayah]", "group": "jawa" },
-    { "id": "reg-3", "code": "Wilayah III", "title": "Jawa Barat & Jateng", "leader": "[Nama Ketua Wilayah]", "group": "jawa" },
-    { "id": "reg-4", "code": "Wilayah IV", "title": "Kalimantan Barat", "leader": "[Nama Ketua Wilayah]", "group": "kalimantan" },
-    { "id": "reg-5", "code": "Wilayah V", "title": "Kalimantan Timur & Utara", "leader": "[Nama Ketua Wilayah]", "group": "kalimantan" },
-    { "id": "reg-6", "code": "Wilayah VI", "title": "Sulawesi Selatan & Barat", "leader": "[Nama Ketua Wilayah]", "group": "sulawesi" },
-    { "id": "reg-7", "code": "Wilayah VII", "title": "Nusa Tenggara Timur", "leader": "[Nama Ketua Wilayah]", "group": "sulawesi" },
-    { "id": "reg-8", "code": "Wilayah VIII", "title": "Papua & Papua Barat", "leader": "[Nama Ketua Wilayah]", "group": "papua" }
+    {
+      "id": "reg-1",
+      "code": "BPW 01",
+      "title": "Sumatera & Riau",
+      "leader": "Pdt. Samuel Harianja, S.Th",
+      "group": "jawa",
+      "churchesCount": "42 Gereja Lokal",
+      "address": "Jl. Yos Sudarso No. 88, Medan, Sumatera Utara",
+      "contact": "0812-6012-3910"
+    },
+    {
+      "id": "reg-2",
+      "code": "BPW 02",
+      "title": "DKI Jakarta & Banten",
+      "leader": "Pdt. Yohanes Setiawan, M.Th",
+      "group": "jawa",
+      "churchesCount": "65 Gereja Lokal",
+      "address": "Jl. Jambrut No. 24, Kenari, Senen, Jakarta Pusat",
+      "contact": "021-31902510"
+    },
+    {
+      "id": "reg-3",
+      "code": "BPW 03",
+      "title": "Jawa Barat & Jateng",
+      "leader": "Pdt. Andreas Budiman, S.Th",
+      "group": "jawa",
+      "churchesCount": "58 Gereja Lokal",
+      "address": "Jl. Cihampelas No. 142, Bandung, Jawa Barat",
+      "contact": "022-4203918"
+    },
+    {
+      "id": "reg-4",
+      "code": "BPW 04",
+      "title": "Kalimantan Barat",
+      "leader": "Pdt. Martinus Lasa, M.Div",
+      "group": "kalimantan",
+      "churchesCount": "120 Gereja Lokal",
+      "address": "Jl. Gajah Mada No. 45, Pontianak, Kalimantan Barat",
+      "contact": "0561-739102"
+    },
+    {
+      "id": "reg-5",
+      "code": "BPW 05",
+      "title": "Kalimantan Timur & Utara",
+      "leader": "Pdt. Barnabas Rappa, S.Th",
+      "group": "kalimantan",
+      "churchesCount": "145 Gereja Lokal",
+      "address": "Jl. Bhayangkara No. 12, Samarinda, Kalimantan Timur",
+      "contact": "0541-748920"
+    },
+    {
+      "id": "reg-6",
+      "code": "BPW 06",
+      "title": "Sulawesi Selatan & Barat",
+      "leader": "Pdt. David Pattinasarany, M.Th",
+      "group": "sulawesi",
+      "churchesCount": "84 Gereja Lokal",
+      "address": "Jl. Gunung Latimojong No. 110, Makassar, Sulawesi Selatan",
+      "contact": "0411-361928"
+    },
+    {
+      "id": "reg-7",
+      "code": "BPW 07",
+      "title": "Nusa Tenggara Timur",
+      "leader": "Pdt. Timotius Neno, S.Th",
+      "group": "sulawesi",
+      "churchesCount": "52 Gereja Lokal",
+      "address": "Jl. Sudirman No. 77, Kupang, NTT",
+      "contact": "0380-839102"
+    },
+    {
+      "id": "reg-8",
+      "code": "BPW 08",
+      "title": "Papua & Papua Barat",
+      "leader": "Pdt. Benyamin Tabuni, M.Th",
+      "group": "papua",
+      "churchesCount": "210 Gereja Lokal",
+      "address": "Jl. Raya Abepura No. 19, Jayapura, Papua",
+      "contact": "0967-531920"
+    }
   ],
   "seminaries": [
     {
       "name": "STT Kemah Injil Jakarta (STT KIJ)",
       "accreditation": "TERAKREDITASI BAN-PT",
-      "description": "Program Sarjana & Pascasarjana Teologi Penggembalaan."
+      "description": "Program Sarjana & Pascasarjana Teologi Penggembalaan dan Kepemimpinan Gerejawi."
     },
     {
       "name": "STT Jaffray Makassar",
       "accreditation": "TERAKREDITASI BAN-PT",
-      "description": "Pusat studi teologi, kepemimpinan, dan musik gereja."
+      "description": "Pusat studi teologi, kepemimpinan misi, dan musik gereja berbasis akademik nasional."
     },
     {
       "name": "STT Simpson Semarang",
       "accreditation": "TERAKREDITASI BAN-PT",
-      "description": "Mencetak pendidik Agama Kristen (PAK) & penginjil."
+      "description": "Mencetak pendidik Agama Kristen (PAK), penginjil, dan pembina pemuda gereja."
     }
   ],
   "pressReleases": [
     {
+      "id": "press-1",
       "date": "05 Agustus 2026",
       "category": "Pesan Pastoral BPP",
-      "title": "Pernyataan Sikap BPP GKII Terhadap Isu Kebangsaan",
-      "summary": "Pesan penggembalaan Ketum BPP GKII dalam menjaga toleransi dan kedamaian..."
+      "title": "Pernyataan Sikap BPP GKII Terhadap Isu Kebangsaan & Kerukunan",
+      "summary": "Pesan penggembalaan Ketum BPP GKII dalam menjaga toleransi, kedamaian, dan persatuan seluruh jemaat di Indonesia.",
+      "content": "Salam Sejahtera dalam Kasih Tuhan Yesus Kristus.\n\nBadan Pengurus Pusat Gereja Kemah Injil Indonesia (BPP GKII) dengan ini menyampaikan pesan pastoral kepada seluruh Badan Pengurus Wilayah (BPW), Pengurus Daerah, serta seluruh Pejabat dan Jemaat GKII di seluruh penjuru Tanah Air.\n\n1. Menjaga Kerukunan & Kedamaian: Menghimbau seluruh jemaat untuk terus menjadi garam dan terang di tengah masyarakat, memelihara toleransi antar umat beragama, dan aktif dalam kegiatan kemasyarakatan.\n2. Kesetiaan Pada Firman Tuhan: Tetap berpegang teguh pada pengajaran Alkitab dan Tata Gereja GKII sebagai landasan etika dan moril dalam hidup berbangsa.\n3. Doa Bersama Nasional: Mengajak seluruh pengurus daerah menyelenggarakan doa syafaat mingguan bagi bangsa, pemerintah, dan keutuhan NKRI.\n\nDemikian pesan pastoral ini disampaikan untuk diperhatikan dan dilaksanakan bersama.\n\nJakarta, 05 Agustus 2026\nBadan Pengurus Pusat GKII"
     },
     {
+      "id": "press-2",
       "date": "20 Juli 2026",
       "category": "Laporan Kerja",
       "title": "Laporan Rapat Kerja Nasional (RAKERNAS) BPP 2026",
-      "summary": "Ringkasan hasil keputusan RAKERNAS terkait evaluasi program kerja nasional..."
+      "summary": "Ringkasan hasil keputusan RAKERNAS terkait evaluasi program kerja nasional dan akselerasi perintisan gereja baru.",
+      "content": "Rapat Kerja Nasional (RAKERNAS) BPP GKII Tahun 2026 telah berlangsung dengan khidmat dan menghasilkan beberapa ketetapan strategis:\n\n- Akselerasi Digitalisasi Kelembagaan: Peluncuran Portal Resmi BPP GKII untuk mempermudah akses dokumen TGTRT dan Surat Edaran secara langsung tanpa syarat login.\n- Penguatan Sekolah Tinggi Teologi: Penyelarasan kurikulum akreditasi BAN-PT pada STT Jaffray, STT KIJ, dan STT Simpson.\n- Program Perintisan Pos PI: Target pembentukan 30 Pos Pelayanan Injil baru di daerah terluar Indonesia."
     },
     {
+      "id": "press-3",
       "date": "10 Juli 2026",
       "category": "Ketetapan Organisasi",
       "title": "Pengangkatan Pejabat Sementara Pengurus Wilayah",
-      "summary": "Ketetapan SK BPP mengenai penetapan pimpinan wilayah daerah..."
+      "summary": "Ketetapan SK BPP mengenai penetapan pimpinan wilayah daerah untuk kelancaran administrasi pelayanan.",
+      "content": "Berdasarkan Sidang Pleno BPP GKII, telah ditetapkan Surat Keputusan (SK) mengenai mutasi dan penyegaran struktur pimpinan di beberapa wilayah BPW untuk menjaga kelancaran koordinasi administrasi kelembagaan nasional."
     }
   ]
 }

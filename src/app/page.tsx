@@ -1,13 +1,18 @@
+'use client';
+
+import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import DocumentCenter from '@/components/DocumentCenter';
 import Officers from '@/components/Officers';
 import RegionalDirectory from '@/components/RegionalDirectory';
 import Footer from '@/components/Footer';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, BookOpen, X, FileText } from 'lucide-react';
 import bppData from '@/data/bpp-data.json';
 
 export default function Home() {
+  const [selectedArticle, setSelectedArticle] = useState<(typeof bppData.pressReleases)[0] | null>(null);
+
   return (
     <div className="bg-[#FAFCFF] text-slate-900 font-sans antialiased selection:bg-[#D4AF37]/30 selection:text-[#0c35a6]">
       <Navbar />
@@ -63,21 +68,34 @@ export default function Home() {
                   Publikasi Resmi
                 </span>
                 <h2 className="text-3xl font-extrabold text-[#0c35a6]">Pesan Pastoral & Warta BPP</h2>
+                <p className="text-slate-500 text-xs sm:text-sm">
+                  Klik kartu warta di bawah ini untuk membaca teks publikasi pesan pastoral secara utuh.
+                </p>
               </div>
 
               <div className="grid md:grid-cols-3 gap-6">
-                {bppData.pressReleases.map((post, idx) => (
+                {bppData.pressReleases.map((post) => (
                   <article
-                    key={idx}
-                    className="p-6 rounded-2xl bg-white border border-slate-200 space-y-3 group cursor-pointer hover:shadow-card transition-all"
+                    key={post.id}
+                    onClick={() => setSelectedArticle(post)}
+                    className="p-6 rounded-2xl bg-[#FAFCFF] border border-slate-200 space-y-3 group cursor-pointer hover:border-[#0c35a6] hover:shadow-card transition-all flex flex-col justify-between"
                   >
-                    <span className="text-[11px] font-semibold text-slate-500">
-                      {post.date} • {post.category}
-                    </span>
-                    <h3 className="font-bold text-base text-[#0c35a6] group-hover:text-[#B8962E] transition-colors leading-snug">
-                      {post.title}
-                    </h3>
-                    <p className="text-xs text-slate-500 leading-relaxed">{post.summary}</p>
+                    <div className="space-y-2">
+                      <span className="text-[10px] font-extrabold text-[#B8962E] uppercase tracking-wider">
+                        {post.date} • {post.category}
+                      </span>
+                      <h3 className="font-bold text-base text-[#0c35a6] group-hover:text-[#06195c] transition-colors leading-snug">
+                        {post.title}
+                      </h3>
+                      <p className="text-xs text-slate-500 leading-relaxed">{post.summary}</p>
+                    </div>
+
+                    <div className="pt-3 border-t border-slate-200/70 text-[11px] font-bold text-[#0c35a6] group-hover:underline flex items-center justify-between">
+                      <span className="flex items-center">
+                        <BookOpen className="w-3.5 h-3.5 mr-1" /> Baca Selengkapnya
+                      </span>
+                      <span>→</span>
+                    </div>
                   </article>
                 ))}
               </div>
@@ -85,6 +103,45 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      {/* ARTICLE FULL READ MODAL */}
+      {selectedArticle && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-6 sm:p-8 relative border border-slate-100 max-h-[85vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-200">
+            <button
+              onClick={() => setSelectedArticle(null)}
+              aria-label="Tutup Warta"
+              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-[#0c35a6] hover:text-white flex items-center justify-center transition-all"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <div className="space-y-4">
+              <span className="text-[10px] font-extrabold text-[#B8962E] uppercase tracking-wider bg-amber-50 px-3 py-1 rounded-full border border-amber-200/60 inline-block">
+                {selectedArticle.date} • {selectedArticle.category}
+              </span>
+
+              <h2 className="text-xl sm:text-2xl font-extrabold text-[#0c35a6] leading-tight">
+                {selectedArticle.title}
+              </h2>
+
+              <div className="p-4 bg-[#FAFCFF] rounded-xl border border-slate-200/80 text-xs text-slate-600 space-y-3 leading-relaxed whitespace-pre-line font-medium">
+                {selectedArticle.content}
+              </div>
+
+              <div className="pt-4 flex justify-end">
+                <button
+                  onClick={() => setSelectedArticle(null)}
+                  className="px-6 py-2.5 rounded-xl bg-[#0c35a6] hover:bg-[#06195c] text-white font-bold text-xs transition-colors"
+                >
+                  Tutup Publikasi
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <Footer />
     </div>
   );

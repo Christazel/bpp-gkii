@@ -14,32 +14,40 @@ export default function Officers() {
           <span className="text-[#B8962E] font-bold text-xs uppercase tracking-widest">Kelembagaan BPP</span>
           <h2 className="text-3xl font-extrabold text-[#0c35a6]">Pengurus Pusat BPP GKII</h2>
           <p className="text-slate-500 text-xs sm:text-sm">
-            Pimpinan eksekutif nasional Gereja Kemah Injil Indonesia.
+            Pimpinan Inti Eksekutif Nasional Badan Pengurus Pusat Gereja Kemah Injil Indonesia.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 3 Core Officers Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {bppData.officers.map((off) => (
             <div
               key={off.id}
-              className="bg-white rounded-2xl border border-slate-200 text-center p-6 hover:shadow-card transition-all"
+              className="bg-white rounded-2xl border border-slate-200 text-center p-8 hover:border-[#0c35a6] hover:shadow-card transition-all flex flex-col justify-between"
             >
-              <div className="w-20 h-20 rounded-2xl bg-[#F4F7FF] border border-[#0c35a6]/20 mx-auto mb-4 flex flex-col items-center justify-center text-[#0c35a6]">
-                <UserCheck className="w-6 h-6 stroke-[1.5] mb-1" />
-                <span className="text-[8px] font-bold uppercase text-[#B8962E]">{off.role}</span>
+              <div>
+                <div className="w-16 h-16 rounded-2xl bg-[#F4F7FF] border border-[#0c35a6]/20 mx-auto mb-4 flex flex-col items-center justify-center text-[#0c35a6] shadow-inner">
+                  <UserCheck className="w-7 h-7 stroke-[1.5]" />
+                </div>
+                <span className="text-[10px] font-black uppercase text-[#B8962E] tracking-wider px-3 py-1 rounded-full bg-amber-50 border border-amber-200/50 inline-block mb-3">
+                  {off.role}
+                </span>
+                <h3 className="font-extrabold text-base text-[#0c35a6] leading-snug">{off.name}</h3>
               </div>
-              <h3 className="font-bold text-base text-[#0c35a6]">{off.name}</h3>
-              <p className="text-xs font-semibold text-[#B8962E] uppercase mt-0.5">{off.title}</p>
+              <p className="text-xs text-slate-500 mt-4 pt-3 border-t border-slate-100 leading-relaxed font-medium">
+                {off.description}
+              </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-10 text-center">
+        {/* Organigram CTA Button */}
+        <div className="mt-12 text-center">
           <button
             onClick={() => setOrganigramModalOpen(true)}
-            className="inline-flex items-center px-6 py-3 rounded-xl bg-white border border-slate-200 text-[#0c35a6] font-bold text-xs hover:border-[#D4AF37] transition-all"
+            className="inline-flex items-center px-6 py-3.5 rounded-xl bg-white border border-slate-200 text-[#0c35a6] font-bold text-xs hover:border-[#D4AF37] hover:bg-[#F4F7FF] transition-all shadow-sm"
           >
-            <Network className="w-4 h-4 mr-2" />
+            <Network className="w-4 h-4 mr-2 text-[#B8962E]" />
             <span>Lihat Organigram Lengkap (PDF)</span>
           </button>
         </div>
@@ -48,7 +56,7 @@ export default function Officers() {
       {/* ORGANIGRAM MODAL */}
       {organigramModalOpen && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 relative border border-slate-100">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 relative border border-slate-100 animate-in fade-in zoom-in-95 duration-200">
             <button
               onClick={() => setOrganigramModalOpen(false)}
               aria-label="Tutup Modal"
@@ -63,27 +71,29 @@ export default function Officers() {
               Bagan Struktur Organisasi
             </span>
             <h3 className="font-bold text-[#0c35a6] text-lg mt-1 mb-1">
-              Bagan Organigram BPP GKII 2023-2028
+              Bagan Organigram BPP GKII
             </h3>
             <p className="text-xs text-slate-500 leading-relaxed mb-4">
-              Bagan alur struktur kepemimpinan nasional dan departemen BPP GKII.
+              Bagan alur struktur kepemimpinan nasional dan departemen BPP GKII resmi.
             </p>
 
-            <div className="bg-slate-100 rounded-xl p-4 border border-slate-200 text-center space-y-2 mb-6">
-              <Network className="w-10 h-10 text-[#0c35a6] mx-auto opacity-70" />
-              <p className="text-xs font-semibold text-slate-700">Dokumen Struktur Terverifikasi BPP</p>
-              <span className="inline-block text-[10px] bg-white px-3 py-1 rounded-full text-slate-500 border border-slate-200">
-                Ukuran File: 2.8 MB
+            <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 text-center space-y-2 mb-6">
+              <Network className="w-10 h-10 text-[#0c35a6] mx-auto opacity-80" />
+              <p className="text-xs font-semibold text-slate-800">Dokumen Struktur Terverifikasi BPP</p>
+              <span className="inline-block text-[10px] bg-white px-3 py-1 rounded-full text-slate-500 border border-slate-200 font-medium">
+                Ukuran File: 850 KB • Format: PDF
               </span>
             </div>
 
-            <button
+            <a
+              href="/pdf/Organigram_BPP_GKII.pdf"
+              download
               onClick={() => setOrganigramModalOpen(false)}
               className="w-full py-3 rounded-xl bg-[#0c35a6] hover:bg-[#06195c] text-white font-bold text-xs transition-colors flex items-center justify-center space-x-2 shadow-md"
             >
               <Download className="w-4 h-4" />
               <span>Unduh Berkas Organigram (PDF)</span>
-            </button>
+            </a>
           </div>
         </div>
       )}
