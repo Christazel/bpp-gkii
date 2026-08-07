@@ -1,17 +1,22 @@
 'use client';
 
 import { useState } from 'react';
-import { MapPin, Phone, Building2, UserCheck, X } from 'lucide-react';
+import { MapPin, Phone, Building2, UserCheck, X, Search } from 'lucide-react';
 import bppData from '@/data/bpp-data.json';
 
 export default function RegionalDirectory() {
-  const [activeRegion, setActiveRegion] = useState('all');
+  const [activeGroup, setActiveGroup] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
   const [selectedBPW, setSelectedBPW] = useState<(typeof bppData.regions)[0] | null>(null);
 
-  const filteredRegions =
-    activeRegion === 'all'
-      ? bppData.regions
-      : bppData.regions.filter((r) => r.group === activeRegion);
+  const filteredRegions = bppData.regions.filter((reg) => {
+    const matchesGroup = activeGroup === 'all' || reg.group === activeGroup;
+    const matchesSearch =
+      reg.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      reg.code.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      reg.leader.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesGroup && matchesSearch;
+  });
 
   return (
     <section id="wilayah" className="py-24 bg-white border-b border-slate-200/70">
@@ -20,26 +25,48 @@ export default function RegionalDirectory() {
           <span className="text-[#B8962E] font-bold text-xs uppercase tracking-widest">Pemetaan Kerja</span>
           <h2 className="text-3xl font-extrabold text-[#0c35a6]">Direktori 13 Wilayah BPW</h2>
           <p className="text-slate-500 text-xs sm:text-sm">
-            Klik kartu wilayah di bawah ini untuk melihat detail Sekretariat & Jumlah Gereja Lokal.
+            Ketik kata kunci nama wilayah atau provinsi di bawah ini untuk mencari data BPW.
           </p>
+        </div>
+
+        {/* Search Bar Input */}
+        <div className="max-w-xl mx-auto relative mb-6">
+          <div className="relative flex items-center">
+            <Search className="w-4 h-4 text-slate-400 absolute left-4 pointer-events-none" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Cari wilayah BPW (misal: Papua, Jawa, Kalbar, Sulut, Bali)..."
+              className="w-full pl-11 pr-4 py-3 text-xs bg-[#FAFCFF] border border-slate-200 rounded-2xl focus:outline-none focus:border-[#0c35a6] focus:ring-2 focus:ring-[#0c35a6]/10 transition-all text-slate-800 placeholder-slate-400 font-medium shadow-sm"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute right-3 p-1 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Region Filter Buttons */}
         <div className="flex flex-wrap justify-center gap-2 mb-8">
           <button
-            onClick={() => setActiveRegion('all')}
+            onClick={() => setActiveGroup('all')}
             className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-              activeRegion === 'all'
+              activeGroup === 'all'
                 ? 'bg-[#0c35a6] text-white shadow-sm'
                 : 'bg-slate-100 text-slate-700 hover:bg-[#F4F7FF]'
             }`}
           >
-            Semua Wilayah
+            Semua (13 Wilayah)
           </button>
           <button
-            onClick={() => setActiveRegion('papua')}
+            onClick={() => setActiveGroup('papua')}
             className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-              activeRegion === 'papua'
+              activeGroup === 'papua'
                 ? 'bg-[#0c35a6] text-white shadow-sm'
                 : 'bg-slate-100 text-slate-700 hover:bg-[#F4F7FF]'
             }`}
@@ -47,9 +74,9 @@ export default function RegionalDirectory() {
             Papua
           </button>
           <button
-            onClick={() => setActiveRegion('kalimantan')}
+            onClick={() => setActiveGroup('kalimantan')}
             className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-              activeRegion === 'kalimantan'
+              activeGroup === 'kalimantan'
                 ? 'bg-[#0c35a6] text-white shadow-sm'
                 : 'bg-slate-100 text-slate-700 hover:bg-[#F4F7FF]'
             }`}
@@ -57,55 +84,70 @@ export default function RegionalDirectory() {
             Kalimantan
           </button>
           <button
-            onClick={() => setActiveRegion('sulawesi')}
+            onClick={() => setActiveGroup('sulawesi')}
             className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-              activeRegion === 'sulawesi'
+              activeGroup === 'sulawesi'
                 ? 'bg-[#0c35a6] text-white shadow-sm'
                 : 'bg-slate-100 text-slate-700 hover:bg-[#F4F7FF]'
             }`}
           >
-            Sulawesi & NTT
+            Sulawesi & Intim
           </button>
           <button
-            onClick={() => setActiveRegion('jawa')}
+            onClick={() => setActiveGroup('jawa')}
             className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-              activeRegion === 'jawa'
+              activeGroup === 'jawa'
                 ? 'bg-[#0c35a6] text-white shadow-sm'
                 : 'bg-slate-100 text-slate-700 hover:bg-[#F4F7FF]'
             }`}
           >
-            Jawa, Sumatera & Banten
+            Jawa & Sumatera
           </button>
         </div>
 
         {/* Grid BPW Region Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {filteredRegions.map((reg) => (
-            <div
-              key={reg.id}
-              onClick={() => setSelectedBPW(reg)}
-              className="p-5 rounded-2xl bg-[#FAFCFF] border border-slate-200 hover:border-[#0c35a6] hover:shadow-card transition-all cursor-pointer group flex flex-col justify-between"
+        {filteredRegions.length === 0 ? (
+          <div className="text-center py-12 bg-[#FAFCFF] rounded-2xl border border-dashed border-slate-300">
+            <p className="text-xs text-slate-500 font-semibold">Tidak ditemukan wilayah BPW yang sesuai dengan "{searchQuery}".</p>
+            <button
+              onClick={() => {
+                setSearchQuery('');
+                setActiveGroup('all');
+              }}
+              className="mt-3 text-xs font-bold text-[#0c35a6] hover:underline"
             >
-              <div>
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-black text-[#B8962E] uppercase">{reg.code}</span>
-                  <span className="text-[10px] font-semibold text-[#0c35a6] bg-blue-50 px-2 py-0.5 rounded-md">
-                    {reg.churchesCount}
-                  </span>
+              Reset Pencarian
+            </button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {filteredRegions.map((reg) => (
+              <div
+                key={reg.id}
+                onClick={() => setSelectedBPW(reg)}
+                className="p-5 rounded-2xl bg-[#FAFCFF] border border-slate-200 hover:border-[#0c35a6] hover:shadow-card transition-all cursor-pointer group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-black text-[#B8962E] uppercase">{reg.code}</span>
+                    <span className="text-[10px] font-semibold text-[#0c35a6] bg-blue-50 px-2 py-0.5 rounded-md">
+                      {reg.churchesCount}
+                    </span>
+                  </div>
+                  <h3 className="font-bold text-sm text-[#0c35a6] mt-2 group-hover:text-[#06195c]">
+                    {reg.title}
+                  </h3>
+                  <p className="text-[11px] text-slate-500 mt-1">Ketua: {reg.leader}</p>
                 </div>
-                <h3 className="font-bold text-sm text-[#0c35a6] mt-2 group-hover:text-[#06195c]">
-                  {reg.title}
-                </h3>
-                <p className="text-[11px] text-slate-500 mt-1">Ketua: {reg.leader}</p>
-              </div>
 
-              <div className="mt-4 pt-3 border-t border-slate-200/70 text-[11px] font-bold text-[#0c35a6] group-hover:underline flex items-center justify-between">
-                <span>Detail Sekretariat</span>
-                <span>→</span>
+                <div className="mt-4 pt-3 border-t border-slate-200/70 text-[11px] font-bold text-[#0c35a6] group-hover:underline flex items-center justify-between">
+                  <span>Detail Sekretariat</span>
+                  <span>→</span>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* BPW DETAIL MODAL */}
