@@ -1,13 +1,19 @@
+import Image from 'next/image';
 import { FileText, MessageCircle } from 'lucide-react';
 
 export default function Hero() {
   return (
     <section id="beranda" className="relative min-h-[70vh] flex items-center justify-center overflow-hidden py-24 px-4 sm:px-6 lg:px-8">
+      {/* Optimized Background Image */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80"
-          alt="Kantor Pusat GKII"
-          className="w-full h-full object-cover object-center"
+          alt="Gedung BPP GKII Pusat"
+          fill
+          priority
+          sizes="100vw"
+          quality={85}
+          className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#06195c]/95 via-[#0c35a6]/90 to-[#06195c]/95"></div>
       </div>
