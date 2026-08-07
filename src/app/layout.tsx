@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
-import { Plus_Jakarta_Sans } from 'next/font/google';
+import { Gabarito } from 'next/font/google';
 import './globals.css';
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const gabarito = Gabarito({
   subsets: ['latin'],
-  variable: '--font-plus-jakarta',
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-gabarito',
 });
 
 export const metadata: Metadata = {
@@ -56,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" className={`${plusJakartaSans.variable} scroll-smooth`}>
+    <html lang="id" className={`${gabarito.variable} scroll-smooth`}>
       <body className="font-sans antialiased bg-[#FAFCFF] text-slate-900">{children}</body>
     </html>
   );
