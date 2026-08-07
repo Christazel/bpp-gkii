@@ -4,3 +4,14 @@ body {
   background-color: #FAFCFF;
   color: #0F172A;
 }
+
+/* Executive Radial & Grid Dot Texture (Inspired by christazel.vercel.app) */
+.bg-hero-texture {
+  background-color: #06195c;
+  background-image: 
+    radial-gradient(circle at 50% 30%, rgba(12, 53, 166, 0.95), #06195c 80%),
+    radial-gradient(circle at 85% 75%, rgba(212, 175, 55, 0.15), transparent 45%),
+    radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.06), transparent 40%),
+    radial-gradient(rgba(255, 255, 255, 0.12) 1.2px, transparent 1.2px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px;
+}
