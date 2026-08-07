@@ -4,16 +4,16 @@ import bppData from '@/data/bpp-data.json';
 export default function Footer() {
   return (
     <>
-      <footer id="kontak" className="bg-[#06195c] text-slate-300 pt-16 pb-12 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Col 1 */}
+      <footer id="kontak" className="bg-[#06195c] text-slate-300 pt-20 pb-12 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            {/* Col 1: Identity */}
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <img
                   src="/gkii-logo-emblem.png"
                   alt="Gereja Kemah Injil Indonesia Emblem"
-                  className="w-11 h-11 object-contain p-1 rounded-xl bg-white/10 border border-white/20"
+                  className="w-10 h-10 object-contain p-1 rounded-xl bg-white/10 border border-white/20 shadow-inner"
                 />
                 <div className="flex flex-col">
                   <span className="font-extrabold text-lg text-white tracking-tight leading-none">BPP GKII</span>
@@ -22,74 +22,77 @@ export default function Footer() {
                   </span>
                 </div>
               </div>
-              <p className="text-xs leading-relaxed text-slate-300">
-                Badan Pengurus Pusat Gereja Kemah Injil Indonesia (GKII). Sekretariat Jenderal Administrasi Kebijakan & Kelembagaan Nasional.
+              <p className="text-xs leading-relaxed text-slate-300/90 font-normal">
+                Portal Resmi Badan Pengurus Pusat Gereja Kemah Injil Indonesia (GKII). Sekretariat Jenderal Administrasi Kebijakan & Kelembagaan Nasional.
               </p>
             </div>
 
-            {/* Col 2 */}
+            {/* Col 2: Quick Links */}
             <div className="space-y-3">
-              <p className="font-bold text-white text-sm">Layanan Kelembagaan</p>
-              <ul className="space-y-2 text-xs">
+              <p className="font-bold text-white text-sm tracking-wide">Akses Dokumen</p>
+              <ul className="space-y-2.5 text-xs text-slate-300">
                 <li>
-                  <a href="#dokumen" className="hover:text-[#D4AF37] transition-colors">
-                    Unduh Tata Gereja (TGTRT)
+                  <a href="#dokumen" className="hover:text-[#D4AF37] transition-colors inline-block">
+                    Tata Gereja (TGTRT)
                   </a>
                 </li>
                 <li>
-                  <a href="#dokumen" className="hover:text-[#D4AF37] transition-colors">
-                    Surat Edaran BPP
+                  <a href="#dokumen" className="hover:text-[#D4AF37] transition-colors inline-block">
+                    Surat Edaran BPP 2026
                   </a>
                 </li>
                 <li>
-                  <a href="#dokumen" className="hover:text-[#D4AF37] transition-colors">
+                  <a href="#dokumen" className="hover:text-[#D4AF37] transition-colors inline-block">
                     Form Pendataan Gereja Baru
                   </a>
                 </li>
                 <li>
-                  <a href="#wilayah" className="hover:text-[#D4AF37] transition-colors">
-                    Direktori BPW 13 Wilayah
+                  <a href="#wilayah" className="hover:text-[#D4AF37] transition-colors inline-block">
+                    Direktori 13 Wilayah BPW
                   </a>
                 </li>
               </ul>
             </div>
 
-            {/* Col 3 */}
+            {/* Col 3: Sekretariat Contact */}
             <div className="space-y-3">
-              <p className="font-bold text-white text-sm">Sekretariat Pusat</p>
-              <ul className="space-y-2 text-xs">
+              <p className="font-bold text-white text-sm tracking-wide">Sekretariat Pusat</p>
+              <ul className="space-y-3 text-xs text-slate-300">
                 <li className="flex items-start">
-                  <MapPin className="w-4 h-4 mr-2 text-[#D4AF37] shrink-0 mt-0.5" />
-                  <span>Jl. Jambrut No.24 7, RT.7/RW.2, Kenari, Kec. Senen, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10430, Indonesia</span>
+                  <MapPin className="w-4 h-4 mr-2.5 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <span className="leading-relaxed">
+                    Jl. Jambrut No.24 7, RT.7/RW.2, Kenari, Kec. Senen, Kota Jakarta Pusat, DKI Jakarta 10430
+                  </span>
                 </li>
                 <li className="flex items-center">
-                  <Phone className="w-4 h-4 mr-2 text-[#D4AF37] shrink-0" />
+                  <Phone className="w-4 h-4 mr-2.5 text-[#D4AF37] shrink-0" />
                   <span>021-31902510</span>
                 </li>
               </ul>
             </div>
 
-            {/* Col 4 */}
+            {/* Col 4: Related Links */}
             <div className="space-y-3">
-              <p className="font-bold text-white text-sm">Tautan Terkait</p>
-              <ul className="space-y-2 text-xs">
+              <p className="font-bold text-white text-sm tracking-wide">Tautan Terkait</p>
+              <ul className="space-y-2.5 text-xs text-slate-300">
                 <li>
                   <a
                     href={bppData.legalities.parentWebUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#D4AF37] font-bold hover:underline flex items-center"
+                    className="text-[#D4AF37] font-semibold hover:underline flex items-center"
                   >
-                    <ExternalLink className="w-3.5 h-3.5 mr-1" /> Website Utama kemah-injil.org
+                    <span>Website Jemaat (kemah-injil.org)</span>
+                    <ExternalLink className="w-3.5 h-3.5 ml-1.5" />
                   </a>
                 </li>
                 <li>
-                  <a href="#stt" className="hover:text-white transition-colors">
+                  <a href="#stt" className="hover:text-white transition-colors inline-block">
                     STT Affiliasi GKII
                   </a>
                 </li>
                 <li>
-                  <a href="#siaran-pers" className="hover:text-white transition-colors">
+                  <a href="#siaran-pers" className="hover:text-white transition-colors inline-block">
                     Warta & Siaran Pers BPP
                   </a>
                 </li>
@@ -97,17 +100,9 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Copyright */}
-          <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+          {/* Copyright Bar */}
+          <div className="pt-8 border-t border-white/10 text-center text-xs text-slate-400">
             <p>&copy; 2026 Portal Resmi Badan Pengurus Pusat Gereja Kemah Injil Indonesia (BPP GKII).</p>
-            <div className="flex space-x-6">
-              <a href={bppData.legalities.parentWebUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                kemah-injil.org
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                Akses Terbuka Tanpa Login
-              </a>
-            </div>
           </div>
         </div>
       </footer>
