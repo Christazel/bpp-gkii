@@ -1,0 +1,114 @@
+{
+  "legalities": {
+    "skNumber": "SK Kemenag RI No. F/Kep/44-1845/78",
+    "portalBadge": "PORTAL RESMI BPP GKII",
+    "accessNotice": "Bebas Akses Tanpa Login",
+    "parentWebUrl": "https://kemah-injil.org/"
+  },
+  "documents": [
+    {
+      "id": "doc-1",
+      "category": "Ketetapan Sidang Raya",
+      "title": "Tata Gereja & Tata Rumah Tangga (TGTRT)",
+      "description": "Aturan dasar dan pedoman organisasi BPP GKII.",
+      "fileSize": "4.2 MB",
+      "format": "PDF",
+      "downloadUrl": "#"
+    },
+    {
+      "id": "doc-2",
+      "category": "Surat Edaran BPP",
+      "title": "SE BPP No. 042/SE/BPP-GKII/2026",
+      "description": "Pedoman dan arahan operasional pelayanan tahun berjalan.",
+      "fileSize": "1.1 MB",
+      "format": "PDF",
+      "downloadUrl": "#"
+    },
+    {
+      "id": "doc-3",
+      "category": "Formulir Pendataan",
+      "title": "Form Pendataan Gereja Lokal Baru",
+      "description": "Formulir isian pendataan keanggotaan gereja lokal baru.",
+      "fileSize": "520 KB",
+      "format": "DOCX",
+      "downloadUrl": "#"
+    }
+  ],
+  "officers": [
+    {
+      "id": "off-1",
+      "role": "Ketua Umum",
+      "name": "[Nama Ketua Umum]",
+      "title": "Ketua Umum BPP GKII",
+      "description": "Pimpinan umum & arah kebijakan nasional."
+    },
+    {
+      "id": "off-2",
+      "role": "Sekretaris",
+      "name": "[Nama Sekretaris Umum]",
+      "title": "Sekretaris Umum BPP GKII",
+      "description": "Pengelola tata kelola administrasi pusat."
+    },
+    {
+      "id": "off-3",
+      "role": "Bendahara",
+      "name": "[Nama Bendahara Umum]",
+      "title": "Bendahara Umum BPP GKII",
+      "description": "Pengawas perbendaharaan & anggaran."
+    },
+    {
+      "id": "off-4",
+      "role": "Ketua Dept.",
+      "name": "[Nama Ketua Dept.]",
+      "title": "Ketua Dept. Misi & Pelayanan",
+      "description": "Koordinator utusan Injil & pelayanan daerah."
+    }
+  ],
+  "regions": [
+    { "id": "reg-1", "code": "Wilayah I", "title": "Sumatera & Riau", "leader": "[Nama Ketua Wilayah]", "group": "jawa" },
+    { "id": "reg-2", "code": "Wilayah II", "title": "DKI Jakarta & Banten", "leader": "[Nama Ketua Wilayah]", "group": "jawa" },
+    { "id": "reg-3", "code": "Wilayah III", "title": "Jawa Barat & Jateng", "leader": "[Nama Ketua Wilayah]", "group": "jawa" },
+    { "id": "reg-4", "code": "Wilayah IV", "title": "Kalimantan Barat", "leader": "[Nama Ketua Wilayah]", "group": "kalimantan" },
+    { "id": "reg-5", "code": "Wilayah V", "title": "Kalimantan Timur & Utara", "leader": "[Nama Ketua Wilayah]", "group": "kalimantan" },
+    { "id": "reg-6", "code": "Wilayah VI", "title": "Sulawesi Selatan & Barat", "leader": "[Nama Ketua Wilayah]", "group": "sulawesi" },
+    { "id": "reg-7", "code": "Wilayah VII", "title": "Nusa Tenggara Timur", "leader": "[Nama Ketua Wilayah]", "group": "sulawesi" },
+    { "id": "reg-8", "code": "Wilayah VIII", "title": "Papua & Papua Barat", "leader": "[Nama Ketua Wilayah]", "group": "papua" }
+  ],
+  "seminaries": [
+    {
+      "name": "STT Kemah Injil Jakarta (STT KIJ)",
+      "accreditation": "TERAKREDITASI BAN-PT",
+      "description": "Program Sarjana & Pascasarjana Teologi Penggembalaan."
+    },
+    {
+      "name": "STT Jaffray Makassar",
+      "accreditation": "TERAKREDITASI BAN-PT",
+      "description": "Pusat studi teologi, kepemimpinan, dan musik gereja."
+    },
+    {
+      "name": "STT Simpson Semarang",
+      "accreditation": "TERAKREDITASI BAN-PT",
+      "description": "Mencetak pendidik Agama Kristen (PAK) & penginjil."
+    }
+  ],
+  "pressReleases": [
+    {
+      "date": "05 Agustus 2026",
+      "category": "Pesan Pastoral BPP",
+      "title": "Pernyataan Sikap BPP GKII Terhadap Isu Kebangsaan",
+      "summary": "Pesan penggembalaan Ketum BPP GKII dalam menjaga toleransi dan kedamaian..."
+    },
+    {
+      "date": "20 Juli 2026",
+      "category": "Laporan Kerja",
+      "title": "Laporan Rapat Kerja Nasional (RAKERNAS) BPP 2026",
+      "summary": "Ringkasan hasil keputusan RAKERNAS terkait evaluasi program kerja nasional..."
+    },
+    {
+      "date": "10 Juli 2026",
+      "category": "Ketetapan Organisasi",
+      "title": "Pengangkatan Pejabat Sementara Pengurus Wilayah",
+      "summary": "Ketetapan SK BPP mengenai penetapan pimpinan wilayah daerah..."
+    }
+  ]
+}
