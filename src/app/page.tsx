@@ -7,7 +7,7 @@ import DocumentCenter from '@/components/DocumentCenter';
 import Officers from '@/components/Officers';
 import RegionalDirectory from '@/components/RegionalDirectory';
 import Footer from '@/components/Footer';
-import { ArrowRight, BookOpen, X, FileText } from 'lucide-react';
+import { ArrowRight, BookOpen, X } from 'lucide-react';
 import bppData from '@/data/bpp-data.json';
 
 export default function Home() {

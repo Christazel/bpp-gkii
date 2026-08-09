@@ -66,7 +66,7 @@ export default function DocumentCenter() {
         {/* Document Grid Cards */}
         {filteredDocs.length === 0 ? (
           <div className="text-center py-12 bg-[#FAFCFF] rounded-2xl border border-dashed border-slate-300">
-            <p className="text-xs text-slate-500 font-semibold">Tidak ada dokumen yang sesuai dengan kata kunci "{searchQuery}".</p>
+            <p className="text-xs text-slate-500 font-semibold">Tidak ada dokumen yang sesuai dengan kata kunci &ldquo;{searchQuery}&rdquo;.</p>
             <button
               onClick={() => setSearchQuery('')}
               className="mt-3 text-xs font-bold text-[#0c35a6] hover:underline"

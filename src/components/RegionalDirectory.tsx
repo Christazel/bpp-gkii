@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { MapPin, Phone, Building2, UserCheck, ChevronDown } from 'lucide-react';
+import { MapPin, Phone, UserCheck, ChevronDown } from 'lucide-react';
 import bppData from '@/data/bpp-data.json';
 
 export default function RegionalDirectory() {
