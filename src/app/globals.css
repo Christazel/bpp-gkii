@@ -13,8 +13,65 @@
   background-color: #06195c;
   background-image: 
     radial-gradient(circle at 50% 30%, rgba(12, 53, 166, 0.95), #06195c 80%),
-    radial-gradient(circle at 85% 75%, rgba(212, 175, 55, 0.15), transparent 45%),
-    radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.06), transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(212, 175, 55, 0.18), transparent 45%),
+    radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.08), transparent 40%),
     radial-gradient(rgba(255, 255, 255, 0.12) 1.2px, transparent 1.2px);
   background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px;
+}
+
+/* Custom Keyframe Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 5s ease-in-out infinite;
+}
+
+/* Gold Gradient Utility */
+.gradient-gold-text {
+  background: linear-gradient(135deg, #FFE57F 0%, #FFD700 50%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Premium Card Border & Hover Effect */
+.card-premium {
+  background: #FFFFFF;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 4px 20px -2px rgba(12, 53, 166, 0.03);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-premium:hover {
+  border-color: #0c35a6;
+  box-shadow: 0 12px 30px -4px rgba(12, 53, 166, 0.12);
+  transform: translateY(-3px);
+}
+
+/* Shimmer Button Highlight */
+.btn-shimmer {
+  background-size: 200% auto;
+  background-image: linear-gradient(90deg, #D4AF37 0%, #FFF3B0 50%, #B8962E 100%);
+  transition: all 0.4s ease;
+}
+
+.btn-shimmer:hover {
+  background-position: right center;
+  box-shadow: 0 8px 25px -4px rgba(212, 175, 55, 0.4);
 }

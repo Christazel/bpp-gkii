@@ -20,21 +20,34 @@ export default function Officers() {
 
         {/* 3 Core Officers Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {bppData.officers.map((off) => (
+          {bppData.officers.map((off, idx) => (
             <div
               key={off.id}
-              className="bg-white rounded-2xl border border-slate-200 text-center p-8 hover:border-[#0c35a6] hover:shadow-md transition-all flex flex-col justify-between"
+              className="bg-white rounded-2xl border border-slate-200/90 text-center p-8 hover:border-[#0c35a6] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden transform hover:-translate-y-1"
             >
-              <div>
-                <div className="w-16 h-16 rounded-2xl bg-[#F4F7FF] border border-[#0c35a6]/20 mx-auto mb-4 flex flex-col items-center justify-center text-[#0c35a6] shadow-inner">
-                  <UserCheck className="w-7 h-7 stroke-[1.5]" />
+              {/* Top Accent Line */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg border-b border-[#D4AF37] bg-[#0c35a6]"></div>
+
+              {/* Watermark Number */}
+              <span className="absolute -bottom-4 -right-2 text-7xl font-black text-slate-100 select-none pointer-events-none group-hover:text-amber-100/60 transition-colors">
+                0{idx + 1}
+              </span>
+
+              <div className="relative z-10">
+                {/* Avatar Icon Box with Gold Ring */}
+                <div className="relative w-20 h-20 mx-auto mb-5">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-[#0c35a6] via-[#D4AF37] to-[#06195c] opacity-80 blur-xs group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative w-full h-full rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-[#0c35a6] shadow-sm">
+                    <UserCheck className="w-8 h-8 stroke-[1.75] text-[#0c35a6] group-hover:scale-110 transition-transform" />
+                  </div>
                 </div>
-                <span className="text-[10px] font-black uppercase text-[#B8962E] tracking-wider px-3 py-1 rounded-full bg-amber-50 border border-amber-200/50 inline-block mb-3">
+
+                <span className="text-[10px] font-black uppercase text-[#B8962E] tracking-wider px-3 py-1 rounded-full bg-amber-50 border border-amber-200/60 inline-block mb-3">
                   {off.role}
                 </span>
-                <h3 className="font-extrabold text-base text-[#0c35a6] leading-snug">{off.name}</h3>
+                <h3 className="font-extrabold text-lg text-[#0c35a6] leading-snug group-hover:text-[#06195c] transition-colors">{off.name}</h3>
               </div>
-              <p className="text-xs text-slate-500 mt-4 pt-3 border-t border-slate-100 leading-relaxed font-medium">
+              <p className="text-xs text-slate-500 mt-5 pt-4 border-t border-slate-100 leading-relaxed font-medium relative z-10">
                 {off.description}
               </p>
             </div>
