@@ -23,7 +23,7 @@ export default function Officers() {
           {bppData.officers.map((off) => (
             <div
               key={off.id}
-              className="bg-white rounded-2xl border border-slate-200 text-center p-8 hover:border-[#0c35a6] hover:shadow-card transition-all flex flex-col justify-between"
+              className="bg-white rounded-2xl border border-slate-200 text-center p-8 hover:border-[#0c35a6] hover:shadow-md transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="w-16 h-16 rounded-2xl bg-[#F4F7FF] border border-[#0c35a6]/20 mx-auto mb-4 flex flex-col items-center justify-center text-[#0c35a6] shadow-inner">

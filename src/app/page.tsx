@@ -41,7 +41,7 @@ export default function Home() {
                 {bppData.seminaries.map((stt, idx) => (
                   <div
                     key={idx}
-                    className="bg-[#FAFCFF] rounded-2xl p-6 border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-card transition-all"
+                    className="bg-[#FAFCFF] rounded-2xl p-6 border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md transition-all"
                   >
                     <div className="space-y-2">
                       <span className="px-3 py-1 rounded-full bg-[#F4F7FF] text-[#0c35a6] font-bold text-[10px]">
@@ -78,7 +78,7 @@ export default function Home() {
                   <article
                     key={post.id}
                     onClick={() => setSelectedArticle(post)}
-                    className="p-6 rounded-2xl bg-[#FAFCFF] border border-slate-200 space-y-3 group cursor-pointer hover:border-[#0c35a6] hover:shadow-card transition-all flex flex-col justify-between"
+                    className="p-6 rounded-2xl bg-[#FAFCFF] border border-slate-200 space-y-3 group cursor-pointer hover:border-[#0c35a6] hover:shadow-md transition-all flex flex-col justify-between"
                   >
                     <div className="space-y-2">
                       <span className="text-[10px] font-extrabold text-[#B8962E] uppercase tracking-wider">

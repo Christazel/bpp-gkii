@@ -79,7 +79,7 @@ export default function DocumentCenter() {
             {filteredDocs.map((doc) => (
               <div
                 key={doc.id}
-                className="p-6 rounded-2xl bg-[#FAFCFF] border border-slate-200 flex flex-col justify-between space-y-4 hover:border-[#0c35a6] hover:shadow-card transition-all group"
+                className="p-6 rounded-2xl bg-[#FAFCFF] border border-slate-200 flex flex-col justify-between space-y-4 hover:border-[#0c35a6] hover:shadow-md transition-all group"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
