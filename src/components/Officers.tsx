@@ -1,11 +1,23 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { UserCheck, Network, FileText, X, Download } from 'lucide-react';
 import bppData from '@/data/bpp-data.json';
 
 export default function Officers() {
   const [organigramModalOpen, setOrganigramModalOpen] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOrganigramModalOpen(false);
+      }
+    };
+    if (organigramModalOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [organigramModalOpen]);
 
   return (
     <section id="pengurus" className="py-24 bg-[#FAFCFF] border-b border-slate-200/70">
@@ -58,7 +70,7 @@ export default function Officers() {
         <div className="mt-12 text-center">
           <button
             onClick={() => setOrganigramModalOpen(true)}
-            className="inline-flex items-center px-6 py-3.5 rounded-xl bg-white border border-slate-200 text-[#0c35a6] font-bold text-xs hover:border-[#D4AF37] hover:bg-[#F4F7FF] transition-all shadow-sm"
+            className="inline-flex items-center px-6 py-3.5 rounded-xl bg-white border border-slate-200 text-[#0c35a6] font-bold text-xs hover:border-[#D4AF37] hover:bg-[#F4F7FF] transition-all shadow-sm cursor-pointer"
           >
             <Network className="w-4 h-4 mr-2 text-[#B8962E]" />
             <span>Lihat Organigram Lengkap (PDF)</span>
@@ -68,12 +80,18 @@ export default function Officers() {
 
       {/* ORGANIGRAM MODAL */}
       {organigramModalOpen && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 relative border border-slate-100 animate-in fade-in zoom-in-95 duration-200">
+        <div
+          onClick={() => setOrganigramModalOpen(false)}
+          className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm cursor-pointer"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 relative border border-slate-100 animate-in fade-in zoom-in-95 duration-200 cursor-default"
+          >
             <button
               onClick={() => setOrganigramModalOpen(false)}
               aria-label="Tutup Modal"
-              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-[#0c35a6] hover:text-white flex items-center justify-center transition-all"
+              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-[#0c35a6] hover:text-white flex items-center justify-center transition-all cursor-pointer"
             >
               <X className="w-4 h-4" />
             </button>
@@ -102,7 +120,7 @@ export default function Officers() {
               href="/pdf/Organigram_BPP_GKII.pdf"
               download
               onClick={() => setOrganigramModalOpen(false)}
-              className="w-full py-3 rounded-xl bg-[#0c35a6] hover:bg-[#06195c] text-white font-bold text-xs transition-colors flex items-center justify-center space-x-2 shadow-md"
+              className="w-full py-3 rounded-xl bg-[#0c35a6] hover:bg-[#06195c] text-white font-bold text-xs transition-colors flex items-center justify-center space-x-2 shadow-md cursor-pointer"
             >
               <Download className="w-4 h-4" />
               <span>Unduh Berkas Organigram (PDF)</span>
@@ -113,3 +131,4 @@ export default function Officers() {
     </section>
   );
 }
+

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import DocumentCenter from '@/components/DocumentCenter';
@@ -12,6 +12,18 @@ import bppData from '@/data/bpp-data.json';
 
 export default function Home() {
   const [selectedArticle, setSelectedArticle] = useState<(typeof bppData.pressReleases)[0] | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setSelectedArticle(null);
+      }
+    };
+    if (selectedArticle) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedArticle]);
 
   return (
     <div className="bg-[#FAFCFF] text-slate-900 font-sans antialiased selection:bg-[#D4AF37]/30 selection:text-[#0c35a6]">
@@ -106,12 +118,18 @@ export default function Home() {
 
       {/* ARTICLE FULL READ MODAL */}
       {selectedArticle && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-6 sm:p-8 relative border border-slate-100 max-h-[85vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-200">
+        <div
+          onClick={() => setSelectedArticle(null)}
+          className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm cursor-pointer"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-6 sm:p-8 relative border border-slate-100 max-h-[85vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-200 cursor-default"
+          >
             <button
               onClick={() => setSelectedArticle(null)}
               aria-label="Tutup Warta"
-              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-[#0c35a6] hover:text-white flex items-center justify-center transition-all"
+              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-[#0c35a6] hover:text-white flex items-center justify-center transition-all cursor-pointer"
             >
               <X className="w-4 h-4" />
             </button>
@@ -132,7 +150,7 @@ export default function Home() {
               <div className="pt-4 flex justify-end">
                 <button
                   onClick={() => setSelectedArticle(null)}
-                  className="px-6 py-2.5 rounded-xl bg-[#0c35a6] hover:bg-[#06195c] text-white font-bold text-xs transition-colors"
+                  className="px-6 py-2.5 rounded-xl bg-[#0c35a6] hover:bg-[#06195c] text-white font-bold text-xs transition-colors cursor-pointer"
                 >
                   Tutup Publikasi
                 </button>
