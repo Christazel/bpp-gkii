@@ -104,7 +104,7 @@ export default function Footer() {
 
           {/* Copyright Bar */}
           <div className="pt-8 border-t border-white/10 text-center text-xs text-slate-400">
-            <p>&copy; 2026 Portal Resmi Badan Pengurus Pusat Gereja Kemah Injil Indonesia (BPP GKII).</p>
+            <p>&copy; {new Date().getFullYear()} Portal Resmi Badan Pengurus Pusat Gereja Kemah Injil Indonesia (BPP GKII).</p>
           </div>
         </div>
       </footer>
