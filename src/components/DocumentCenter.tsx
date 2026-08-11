@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { FileText, Eye, Download, X, FileCheck2, CheckCircle2, Search } from 'lucide-react';
+import { FileText, Eye, Download, X, FileCheck2, CheckCircle2, Search, Share2, Printer } from 'lucide-react';
 import bppData from '@/data/bpp-data.json';
 
 export default function DocumentCenter() {
@@ -38,6 +38,32 @@ export default function DocumentCenter() {
     setTimeout(() => {
       setToastMsg(null);
     }, 3000);
+  };
+
+  const handleShare = async (title: string, desc: string) => {
+    const shareUrl = window.location.href.split('#')[0] + '#dokumen';
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: `${title} | BPP GKII`,
+          text: desc,
+          url: shareUrl,
+        });
+      } catch {
+        // Ignored share cancellation
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(`${title} - ${shareUrl}`);
+        triggerToast('Tautan dokumen berhasil disalin ke papan klip!');
+      } catch {
+        triggerToast('Gagal menyalin tautan dokumen');
+      }
+    }
+  };
+
+  const handlePrint = () => {
+    window.print();
   };
 
   const filteredDocs = bppData.documents.filter(
@@ -126,7 +152,7 @@ export default function DocumentCenter() {
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-2.5 relative z-10">
+                <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-2 relative z-10">
                   <button
                     onClick={() =>
                       setModalData({
@@ -137,17 +163,26 @@ export default function DocumentCenter() {
                         format: doc.format,
                       })
                     }
-                    className="flex-1 py-2 px-3 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 hover:border-[#0c35a6] hover:text-[#0c35a6] rounded-xl transition-all flex items-center justify-center space-x-1.5 cursor-pointer"
+                    className="flex-1 py-2 px-2.5 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 hover:border-[#0c35a6] hover:text-[#0c35a6] rounded-xl transition-all flex items-center justify-center space-x-1 cursor-pointer"
                   >
                     <Eye className="w-3.5 h-3.5 text-slate-500" />
                     <span>Preview</span>
+                  </button>
+
+                  <button
+                    onClick={() => handleShare(doc.title, doc.description)}
+                    aria-label={`Bagikan ${doc.title}`}
+                    className="p-2 text-xs font-semibold text-slate-600 bg-slate-50 hover:bg-slate-100 border border-slate-200 hover:text-[#0c35a6] hover:border-[#0c35a6] rounded-xl transition-all flex items-center justify-center cursor-pointer"
+                    title="Bagikan Tautan Dokumen"
+                  >
+                    <Share2 className="w-3.5 h-3.5" />
                   </button>
 
                   <a
                     href={doc.downloadUrl}
                     download={doc.downloadUrl.split('/').pop()}
                     onClick={() => triggerToast(`Memulai unduhan ${doc.title}...`)}
-                    className="flex-1 py-2 px-3 text-xs font-bold text-white bg-[#0c35a6] hover:bg-[#06195c] rounded-xl transition-all flex items-center justify-center space-x-1.5 shadow-sm hover:shadow-md cursor-pointer"
+                    className="flex-1 py-2 px-2.5 text-xs font-bold text-white bg-[#0c35a6] hover:bg-[#06195c] rounded-xl transition-all flex items-center justify-center space-x-1 shadow-sm hover:shadow-md cursor-pointer"
                   >
                     <Download className="w-3.5 h-3.5" />
                     <span>Unduh</span>
@@ -198,7 +233,23 @@ export default function DocumentCenter() {
               </span>
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex flex-col sm:flex-row gap-2.5 pt-2">
+              <button
+                onClick={handlePrint}
+                className="flex-1 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition-colors flex items-center justify-center space-x-1.5 cursor-pointer"
+              >
+                <Printer className="w-4 h-4 text-slate-600" />
+                <span>Cetak Dokumen</span>
+              </button>
+
+              <button
+                onClick={() => handleShare(modalData.title, modalData.desc)}
+                className="flex-1 py-2.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-[#B8962E] border border-amber-200/80 font-bold text-xs transition-colors flex items-center justify-center space-x-1.5 cursor-pointer"
+              >
+                <Share2 className="w-4 h-4" />
+                <span>Bagikan Tautan</span>
+              </button>
+
               <a
                 href={modalData.downloadUrl}
                 download={modalData.downloadUrl.split('/').pop()}
@@ -206,10 +257,10 @@ export default function DocumentCenter() {
                   setModalData(null);
                   triggerToast(`Memulai unduhan berkas ${modalData.format}...`);
                 }}
-                className="w-full py-3 rounded-xl bg-[#0c35a6] hover:bg-[#06195c] text-white font-bold text-xs transition-colors flex items-center justify-center space-x-2 shadow-md cursor-pointer"
+                className="flex-1 py-2.5 rounded-xl bg-[#0c35a6] hover:bg-[#06195c] text-white font-bold text-xs transition-colors flex items-center justify-center space-x-1.5 shadow-md cursor-pointer"
               >
                 <Download className="w-4 h-4" />
-                <span>Unduh Berkas ({modalData.format}) Lengkap</span>
+                <span>Unduh Berkas</span>
               </a>
             </div>
           </div>

@@ -7,6 +7,7 @@ import DocumentCenter from '@/components/DocumentCenter';
 import Officers from '@/components/Officers';
 import RegionalDirectory from '@/components/RegionalDirectory';
 import Footer from '@/components/Footer';
+import ScrollToTop from '@/components/ScrollToTop';
 import { ArrowRight, BookOpen, X } from 'lucide-react';
 import bppData from '@/data/bpp-data.json';
 
@@ -172,6 +173,7 @@ export default function Home() {
       )}
 
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
