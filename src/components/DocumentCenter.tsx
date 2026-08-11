@@ -23,8 +23,14 @@ export default function DocumentCenter() {
     };
     if (modalData) {
       window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
     }
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
   }, [modalData]);
 
   const triggerToast = (msg: string) => {
@@ -139,7 +145,7 @@ export default function DocumentCenter() {
 
                   <a
                     href={doc.downloadUrl}
-                    download
+                    download={doc.downloadUrl.split('/').pop()}
                     onClick={() => triggerToast(`Memulai unduhan ${doc.title}...`)}
                     className="flex-1 py-2 px-3 text-xs font-bold text-white bg-[#0c35a6] hover:bg-[#06195c] rounded-xl transition-all flex items-center justify-center space-x-1.5 shadow-sm hover:shadow-md cursor-pointer"
                   >
@@ -158,10 +164,15 @@ export default function DocumentCenter() {
         <div
           onClick={() => setModalData(null)}
           className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm cursor-pointer"
+          role="presentation"
+          aria-hidden="false"
         >
           <div
             onClick={(e) => e.stopPropagation()}
             className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 relative border border-slate-100 animate-in fade-in zoom-in-95 duration-200 cursor-default"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-doc-title"
           >
             <button
               onClick={() => setModalData(null)}
@@ -176,7 +187,7 @@ export default function DocumentCenter() {
             <span className="text-[10px] font-extrabold text-[#B8962E] uppercase tracking-wider">
               Preview Dokumen Resmi BPP
             </span>
-            <h3 className="font-bold text-[#0c35a6] text-lg mt-1 mb-1">{modalData.title}</h3>
+            <h3 id="modal-doc-title" className="font-bold text-[#0c35a6] text-lg mt-1 mb-1">{modalData.title}</h3>
             <p className="text-xs text-slate-500 leading-relaxed mb-4">{modalData.desc}</p>
 
             <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 text-center space-y-2 mb-6">
@@ -190,7 +201,7 @@ export default function DocumentCenter() {
             <div className="flex gap-3">
               <a
                 href={modalData.downloadUrl}
-                download
+                download={modalData.downloadUrl.split('/').pop()}
                 onClick={() => {
                   setModalData(null);
                   triggerToast(`Memulai unduhan berkas ${modalData.format}...`);
@@ -207,7 +218,7 @@ export default function DocumentCenter() {
 
       {/* TOAST NOTIFICATION CONTAINER */}
       {toastMsg && (
-        <div className="fixed bottom-6 left-6 z-50 transition-all duration-300">
+        <div className="fixed bottom-6 left-6 z-[70] transition-all duration-300" role="alert" aria-live="polite">
           <div className="bg-[#06195c] text-white text-xs font-bold px-4 py-3 rounded-xl shadow-2xl border border-[#D4AF37]/30 flex items-center space-x-2">
             <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0" />
             <span>{toastMsg}</span>

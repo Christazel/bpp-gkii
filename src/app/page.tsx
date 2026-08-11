@@ -21,8 +21,14 @@ export default function Home() {
     };
     if (selectedArticle) {
       window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
     }
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
   }, [selectedArticle]);
 
   return (
@@ -121,10 +127,15 @@ export default function Home() {
         <div
           onClick={() => setSelectedArticle(null)}
           className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm cursor-pointer"
+          role="presentation"
+          aria-hidden="false"
         >
           <div
             onClick={(e) => e.stopPropagation()}
             className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-6 sm:p-8 relative border border-slate-100 max-h-[85vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-200 cursor-default"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-article-title"
           >
             <button
               onClick={() => setSelectedArticle(null)}
@@ -139,7 +150,7 @@ export default function Home() {
                 {selectedArticle.date} • {selectedArticle.category}
               </span>
 
-              <h2 className="text-xl sm:text-2xl font-extrabold text-[#0c35a6] leading-tight">
+              <h2 id="modal-article-title" className="text-xl sm:text-2xl font-extrabold text-[#0c35a6] leading-tight">
                 {selectedArticle.title}
               </h2>
 

@@ -20,7 +20,7 @@ export default function RegionalDirectory() {
             {/* Left Column: Header & Dropdown Selector (4 Cols) */}
             <div className="lg:col-span-4 space-y-4 pr-0 lg:pr-6 lg:border-r border-slate-200/80">
               <div className="space-y-1">
-                <span className="text-[#B8962E] font-extrabold text-[10px] uppercase tracking-widest block flex items-center">
+                <span className="text-[#B8962E] font-extrabold text-[10px] uppercase tracking-widest flex items-center">
                   <Compass className="w-3.5 h-3.5 mr-1.5 text-[#B8962E]" /> Pemetaan Kerja Wilayah
                 </span>
                 <h2 className="text-2xl font-extrabold text-[#0c35a6]">
@@ -45,7 +45,7 @@ export default function RegionalDirectory() {
                     </option>
                   ))}
                 </select>
-                <ChevronDown className="w-4 h-4 text-slate-500 absolute right-3 top-4.5 pointer-events-none" />
+                <ChevronDown className="w-4 h-4 text-slate-500 absolute right-3 top-[18px] pointer-events-none" />
               </div>
 
               {/* Quick Select Region Badges/Pills */}
