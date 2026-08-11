@@ -75,3 +75,34 @@
   background-position: right center;
   box-shadow: 0 8px 25px -4px rgba(212, 175, 55, 0.4);
 }
+
+/* Print Stylesheet Tailored for BPP GKII Documents */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  header,
+  footer,
+  .no-print,
+  button,
+  [role="dialog"] button,
+  a[aria-label="Hubungi WhatsApp BPP GKII"],
+  button[aria-label="Kembali ke atas halaman"] {
+    display: none !important;
+  }
+
+  [role="dialog"] {
+    position: static !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+
+  .bg-hero-texture {
+    background: none !important;
+    color: #000000 !important;
+  }
+}
