@@ -8,12 +8,6 @@ export default function Hero() {
       <div className="absolute bottom-10 right-10 w-[350px] h-[250px] bg-[#D4AF37]/15 blur-[110px] rounded-full pointer-events-none"></div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center text-white space-y-7 my-auto pt-6">
-        {/* Emblem & Institutional Pill */}
-        <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-[#D4AF37] text-xs font-semibold uppercase tracking-wider border border-white/15 shadow-inner animate-float">
-          <img src="/gkii-logo-emblem.png" alt="Emblem GKII" className="w-4 h-4 object-contain" />
-          <span>Portal Resmi Kelembagaan Pusat</span>
-        </div>
-
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
           Badan Pengurus Pusat <br />
           <span className="bg-gradient-to-r from-[#FFE57F] via-[#FFD700] to-[#D4AF37] bg-clip-text text-transparent drop-shadow-md">
