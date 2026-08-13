@@ -8,7 +8,7 @@ import Officers from '@/components/Officers';
 import RegionalDirectory from '@/components/RegionalDirectory';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
-import { ArrowRight, BookOpen, X } from 'lucide-react';
+import { BookOpen, X, ExternalLink } from 'lucide-react';
 import bppData from '@/data/bpp-data.json';
 
 export default function Home() {
@@ -70,10 +70,13 @@ export default function Home() {
                       <p className="text-xs text-slate-500">{stt.description}</p>
                     </div>
                     <a
-                      href="#kontak"
-                      className="text-xs font-bold text-[#0c35a6] hover:underline inline-flex items-center text-left"
+                      href={stt.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-bold text-[#0c35a6] hover:text-[#06195c] hover:underline inline-flex items-center text-left pt-2"
                     >
-                      Info Penerimaan Mahasiswa <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                      <span>Website Resmi STT</span>
+                      <ExternalLink className="w-3.5 h-3.5 ml-1.5" />
                     </a>
                   </div>
                 ))}

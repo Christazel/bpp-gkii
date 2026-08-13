@@ -202,19 +202,22 @@
   ],
   "seminaries": [
     {
-      "name": "STT Kemah Injil Jakarta (STT KIJ)",
+      "name": "STT Jaffray Jakarta",
       "accreditation": "TERAKREDITASI BAN-PT",
-      "description": "Program Sarjana & Pascasarjana Teologi Penggembalaan dan Kepemimpinan Gerejawi."
+      "description": "Program Sarjana & Pascasarjana Teologi Penggembalaan dan Kepemimpinan Gerejawi.",
+      "websiteUrl": "https://sttjaffrayjakarta.ac.id/"
     },
     {
       "name": "STT Jaffray Makassar",
       "accreditation": "TERAKREDITASI BAN-PT",
-      "description": "Pusat studi teologi, kepemimpinan misi, dan musik gereja berbasis akademik nasional."
+      "description": "Pusat studi teologi, kepemimpinan misi, dan musik gereja berbasis akademik nasional.",
+      "websiteUrl": "https://sttjaffray.ac.id/"
     },
     {
       "name": "STT Simpson Semarang",
       "accreditation": "TERAKREDITASI BAN-PT",
-      "description": "Mencetak pendidik Agama Kristen (PAK), penginjil, dan pembina pemuda gereja."
+      "description": "Mencetak pendidik Agama Kristen (PAK), penginjil, dan pembina pemuda gereja.",
+      "websiteUrl": "https://sttsimpson.ac.id/"
     }
   ],
   "pressReleases": [
