@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { MapPin, Phone, ExternalLink } from 'lucide-react';
 import bppData from '@/data/bpp-data.json';
 
@@ -12,7 +13,7 @@ export default function Footer() {
             {/* Col 1: Identity */}
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <img
+                <Image width={200} height={40}
                   src="/gkii-logo-emblem.png"
                   alt="Gereja Kemah Injil Indonesia Emblem"
                   className="w-10 h-10 object-contain p-1 rounded-xl bg-white/10 border border-white/20 shadow-inner"

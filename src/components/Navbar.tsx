@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 import { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -35,7 +37,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo BPP GKII */}
           <a href="#beranda" className="flex items-center space-x-3 group py-2" aria-label="Beranda BPP GKII">
-            <img
+            <Image width={220} height={44} priority
               src="/gkii-logo-long.png"
               alt="Gereja Kemah Injil Indonesia Logo"
               className="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105"
