@@ -4,6 +4,10 @@ import { useState, useEffect } from 'react';
 import { FileText, Eye, Download, X, FileCheck2, CheckCircle2, Search, Share2, Printer } from 'lucide-react';
 import bppData from '@/data/bpp-data.json';
 
+// Security: sanitize user input to prevent injection of dangerous characters
+const sanitizeInput = (value: string): string =>
+  value.replace(/[<>"'`;&()]/g, '').slice(0, 60);
+
 export default function DocumentCenter() {
   const [searchQuery, setSearchQuery] = useState('');
   const [modalData, setModalData] = useState<{
@@ -92,7 +96,8 @@ export default function DocumentCenter() {
             <input
               type="text"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              maxLength={60}
+              onChange={(e) => setSearchQuery(sanitizeInput(e.target.value))}
               placeholder="Cari kata kunci dokumen (misal: TGTRT, Surat Edaran, Form)..."
               className="w-full pl-11 pr-4 py-3 text-xs bg-[#FAFCFF] border border-slate-200 rounded-2xl focus:outline-none focus:border-[#0c35a6] focus:ring-2 focus:ring-[#0c35a6]/10 transition-all text-slate-800 placeholder-slate-400 font-medium"
             />

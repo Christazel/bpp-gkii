@@ -39,3 +39,24 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# === SECURITY: sensitive credential & secret files ===
+*.key
+*p12
+*.pfx
+*.cert
+*.crt
+*.secret
+.env.local
+.env.production
+.env.staging
+secrets/
+private/
+
+# === OS & Editor artifacts ===
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+.idea/
+.vscode/settings.json
