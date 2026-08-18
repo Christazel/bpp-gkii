@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Home, ArrowLeft } from 'lucide-react';
 
@@ -7,7 +8,7 @@ export default function NotFound() {
       {/* Top Simple Header */}
       <header className="max-w-4xl mx-auto w-full pt-4 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <img
+          <Image width={220} height={44} priority
             src="/gkii-logo-long.png"
             alt="Gereja Kemah Injil Indonesia Logo"
             className="h-9 w-auto object-contain"

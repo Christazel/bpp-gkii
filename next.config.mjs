@@ -1,6 +1,7 @@
 ﻿/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  poweredByHeader: false,
   images: {
     remotePatterns: [
       {
@@ -72,6 +73,10 @@ const nextConfig = {
           {
             key: 'X-Permitted-Cross-Domain-Policies',
             value: 'none',
+          },
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
           },
         ],
       },

@@ -1,6 +1,5 @@
 import { ImageResponse } from 'next/og';
 
-export const runtime = 'edge';
 export const alt = 'BPP GKII | Portal Resmi Badan Pengurus Pusat Gereja Kemah Injil Indonesia';
 export const size = {
   width: 1200,
