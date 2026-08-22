@@ -37,10 +37,10 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo BPP GKII */}
           <a href="#beranda" className="flex items-center space-x-3 group py-2" aria-label="Beranda BPP GKII">
-            <Image width={220} height={44} priority
+            <Image width={220} height={44} priority draggable={false}
               src="/gkii-logo-long.png"
               alt="Gereja Kemah Injil Indonesia Logo"
-              className="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105 select-none"
             />
           </a>
 

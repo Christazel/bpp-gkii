@@ -45,24 +45,53 @@ export default function DocumentCenter() {
   };
 
   const handleShare = async (title: string, desc: string) => {
-    const shareUrl = window.location.href.split('#')[0] + '#dokumen';
-    if (navigator.share) {
+    // Sanitize and construct canonical share URL without query or hash injection
+    const baseUrl = typeof window !== 'undefined' ? (window.location.origin + window.location.pathname) : 'https://bpp-gkii.vercel.app/';
+    const shareUrl = baseUrl + '#dokumen';
+
+    // Try Web Share API (mobile devices)
+    if (typeof navigator !== 'undefined' && navigator.share) {
       try {
         await navigator.share({
-          title: `${title} | BPP GKII`,
+          title: title + ' | BPP GKII',
           text: desc,
           url: shareUrl,
         });
-      } catch {
-        // Ignored share cancellation
+        return;
+      } catch (err: unknown) {
+        // AbortError is triggered when user cancels share sheet - gracefully return
+        if (err instanceof Error && err.name === 'AbortError') {
+          return;
+        }
       }
-    } else {
+    }
+
+    // Secure context clipboard copy fallback
+    if (typeof navigator !== 'undefined' && navigator.clipboard && typeof window !== 'undefined' && window.isSecureContext) {
       try {
-        await navigator.clipboard.writeText(`${title} - ${shareUrl}`);
+        await navigator.clipboard.writeText(title + ' - ' + shareUrl);
         triggerToast('Tautan dokumen berhasil disalin ke papan klip!');
+        return;
       } catch {
-        triggerToast('Gagal menyalin tautan dokumen');
+        // Fallback to execCommand below
       }
+    }
+
+    // Legacy fallback using temporary input element
+    try {
+      const textarea = document.createElement('textarea');
+      textarea.value = title + ' - ' + shareUrl;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-999999px';
+      textarea.style.top = '-999999px';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      triggerToast('Tautan dokumen berhasil disalin ke papan klip!');
+    } catch {
+      triggerToast('Gagal menyalin tautan dokumen');
     }
   };
 
