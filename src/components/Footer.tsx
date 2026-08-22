@@ -13,10 +13,10 @@ export default function Footer() {
             {/* Col 1: Identity */}
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <Image width={200} height={40}
+                <Image width={40} height={40} draggable={false}
                   src="/gkii-logo-emblem.png"
                   alt="Gereja Kemah Injil Indonesia Emblem"
-                  className="w-10 h-10 object-contain p-1 rounded-xl bg-white/10 border border-white/20 shadow-inner"
+                  className="w-10 h-10 object-contain p-1 rounded-xl bg-white/10 border border-white/20 shadow-inner select-none"
                 />
                 <div className="flex flex-col">
                   <span className="font-extrabold text-lg text-white tracking-tight leading-none">BPP GKII</span>

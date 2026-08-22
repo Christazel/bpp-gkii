@@ -8,10 +8,10 @@ export default function NotFound() {
       {/* Top Simple Header */}
       <header className="max-w-4xl mx-auto w-full pt-4 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <Image width={220} height={44} priority
+          <Image width={220} height={44} priority draggable={false}
             src="/gkii-logo-long.png"
             alt="Gereja Kemah Injil Indonesia Logo"
-            className="h-9 w-auto object-contain"
+            className="h-9 w-auto object-contain select-none"
           />
         </Link>
         <Link
