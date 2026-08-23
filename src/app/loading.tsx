@@ -1,41 +1,43 @@
 export default function Loading() {
   return (
     <div className="min-h-screen bg-[#FAFCFF] font-sans antialiased selection:bg-[#D4AF37]/30 selection:text-[#0c35a6]">
-      {/* Top Navbar Skeleton */}
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 h-20 flex items-center">
+      {/* Top Navbar Skeleton (Synchronized 1:1 with Navbar.tsx) */}
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 h-20 flex items-center shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="w-36 h-9 bg-slate-200 rounded-xl animate-pulse"></div>
-            <div className="hidden sm:block w-16 h-5 bg-amber-100 rounded-md animate-pulse"></div>
+          {/* Logo Skeleton */}
+          <div className="w-44 sm:w-52 h-10 bg-slate-200/80 rounded-xl animate-pulse"></div>
+
+          {/* Desktop Navigation Links Skeleton (Right-aligned) */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <div className="w-16 h-4 bg-slate-200/80 rounded-md animate-pulse"></div>
+            <div className="w-24 h-4 bg-slate-200/80 rounded-md animate-pulse"></div>
+            <div className="w-24 h-4 bg-slate-200/80 rounded-md animate-pulse"></div>
+            <div className="w-28 h-4 bg-slate-200/80 rounded-md animate-pulse"></div>
+            <div className="w-20 h-4 bg-slate-200/80 rounded-md animate-pulse"></div>
           </div>
-          <div className="hidden lg:flex items-center space-x-6">
-            <div className="w-24 h-4 bg-slate-200 rounded animate-pulse"></div>
-            <div className="w-24 h-4 bg-slate-200 rounded animate-pulse"></div>
-            <div className="w-24 h-4 bg-slate-200 rounded animate-pulse"></div>
-            <div className="w-24 h-4 bg-slate-200 rounded animate-pulse"></div>
-          </div>
-          <div className="w-32 h-9 bg-[#0c35a6]/20 rounded-full animate-pulse"></div>
+
+          {/* Mobile Menu Button Skeleton */}
+          <div className="lg:hidden w-10 h-10 bg-slate-100 rounded-xl animate-pulse"></div>
         </div>
       </header>
 
       <main className="space-y-16 py-10">
         {/* Hero Section Skeleton */}
         <section className="max-w-4xl mx-auto text-center space-y-6 px-4 pt-12">
-          <div className="w-48 h-7 bg-amber-100/80 rounded-full mx-auto animate-pulse"></div>
           <div className="space-y-3">
-            <div className="w-3/4 h-10 bg-slate-200 rounded-2xl mx-auto animate-pulse"></div>
-            <div className="w-2/3 h-10 bg-amber-200/50 rounded-2xl mx-auto animate-pulse"></div>
+            <div className="w-4/5 max-w-2xl h-10 sm:h-12 bg-slate-200 rounded-2xl mx-auto animate-pulse"></div>
+            <div className="w-3/5 max-w-lg h-10 sm:h-12 bg-amber-200/50 rounded-2xl mx-auto animate-pulse"></div>
           </div>
-          <div className="w-5/6 h-5 bg-slate-200 rounded-lg mx-auto animate-pulse"></div>
+          <div className="w-5/6 max-w-xl h-4 sm:h-5 bg-slate-200/80 rounded-lg mx-auto animate-pulse"></div>
 
           {/* Hero Buttons Skeleton */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <div className="w-48 h-12 bg-amber-300/60 rounded-xl animate-pulse"></div>
+            <div className="w-44 h-12 bg-amber-200/70 rounded-xl animate-pulse"></div>
             <div className="w-40 h-12 bg-slate-200 rounded-xl animate-pulse"></div>
           </div>
 
           {/* Hero Stat Strip Skeleton */}
-          <div className="pt-8">
+          <div className="pt-8 max-w-2xl mx-auto">
             <div className="grid grid-cols-3 gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
               <div className="space-y-2 flex flex-col items-center">
                 <div className="w-12 h-6 bg-slate-200 rounded animate-pulse"></div>

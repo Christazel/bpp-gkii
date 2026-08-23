@@ -140,6 +140,7 @@ export default function Home() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-article-title"
+            aria-describedby="modal-article-content"
           >
             <button
               onClick={() => setSelectedArticle(null)}
@@ -158,7 +159,7 @@ export default function Home() {
                 {selectedArticle.title}
               </h2>
 
-              <div className="p-4 bg-[#FAFCFF] rounded-xl border border-slate-200/80 text-xs text-slate-600 space-y-3 leading-relaxed whitespace-pre-line font-medium">
+              <div id="modal-article-content" className="p-4 bg-[#FAFCFF] rounded-xl border border-slate-200/80 text-xs text-slate-600 space-y-3 leading-relaxed whitespace-pre-line font-medium">
                 {selectedArticle.content}
               </div>
 

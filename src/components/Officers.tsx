@@ -44,7 +44,7 @@ export default function Officers() {
               className="bg-white rounded-2xl border border-slate-200/90 text-center p-8 hover:border-[#0c35a6] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden transform hover:-translate-y-1"
             >
               {/* Top Accent Line */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg border-b border-[#D4AF37] bg-[#0c35a6]"></div>
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0c35a6] via-[#D4AF37] to-[#06195c]"></div>
 
               {/* Watermark Number */}
               <span className="absolute -bottom-4 -right-2 text-7xl font-black text-slate-100 select-none pointer-events-none group-hover:text-amber-100/60 transition-colors">
@@ -98,6 +98,7 @@ export default function Officers() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-organigram-title"
+            aria-describedby="modal-organigram-desc"
           >
             <button
               onClick={() => setOrganigramModalOpen(false)}
@@ -115,7 +116,7 @@ export default function Officers() {
             <h3 id="modal-organigram-title" className="font-bold text-[#0c35a6] text-lg mt-1 mb-1">
               Bagan Organigram BPP GKII
             </h3>
-            <p className="text-xs text-slate-500 leading-relaxed mb-4">
+            <p id="modal-organigram-desc" className="text-xs text-slate-500 leading-relaxed mb-4">
               Bagan alur struktur kepemimpinan nasional dan departemen BPP GKII resmi.
             </p>
 
