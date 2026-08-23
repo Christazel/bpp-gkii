@@ -242,6 +242,7 @@ export default function DocumentCenter() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-doc-title"
+            aria-describedby="modal-doc-desc"
           >
             <button
               onClick={() => setModalData(null)}
@@ -257,7 +258,7 @@ export default function DocumentCenter() {
               Preview Dokumen Resmi BPP
             </span>
             <h3 id="modal-doc-title" className="font-bold text-[#0c35a6] text-lg mt-1 mb-1">{modalData.title}</h3>
-            <p className="text-xs text-slate-500 leading-relaxed mb-4">{modalData.desc}</p>
+            <p id="modal-doc-desc" className="text-xs text-slate-500 leading-relaxed mb-4">{modalData.desc}</p>
 
             <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 text-center space-y-2 mb-6">
               <FileCheck2 className="w-10 h-10 text-[#0c35a6] mx-auto opacity-80" />
