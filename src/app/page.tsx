@@ -60,20 +60,23 @@ export default function Home() {
                 {bppData.seminaries.map((stt, idx) => (
                   <div
                     key={idx}
-                    className="bg-[#FAFCFF] rounded-2xl p-6 border border-slate-200 flex flex-col justify-between space-y-4 hover:shadow-md transition-all"
+                    className="bg-[#FAFCFF] rounded-2xl p-6 border border-slate-200/90 flex flex-col justify-between space-y-4 hover:border-[#0c35a6] hover:shadow-xl transition-all duration-300 group relative overflow-hidden transform hover:-translate-y-1"
                   >
-                    <div className="space-y-2">
-                      <span className="px-3 py-1 rounded-full bg-[#F4F7FF] text-[#0c35a6] font-bold text-[10px]">
+                    {/* Top Accent Line */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0c35a6] via-[#D4AF37] to-[#06195c]"></div>
+
+                    <div className="space-y-2 relative z-10 pt-1">
+                      <span className="text-[10px] font-black uppercase tracking-wider text-[#B8962E] bg-amber-50 px-3 py-1 rounded-full border border-amber-200/60 inline-block">
                         {stt.accreditation}
                       </span>
-                      <h3 className="font-bold text-base text-[#0c35a6] pt-1">{stt.name}</h3>
-                      <p className="text-xs text-slate-500">{stt.description}</p>
+                      <h3 className="font-extrabold text-base text-[#0c35a6] group-hover:text-[#06195c] transition-colors pt-1">{stt.name}</h3>
+                      <p className="text-xs text-slate-500 leading-relaxed">{stt.description}</p>
                     </div>
                     <a
                       href={stt.websiteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-bold text-[#0c35a6] hover:text-[#06195c] hover:underline inline-flex items-center text-left pt-2"
+                      className="text-xs font-bold text-[#0c35a6] hover:text-[#06195c] hover:underline inline-flex items-center text-left pt-2 relative z-10"
                     >
                       <span>Website Resmi STT</span>
                       <ExternalLink className="w-3.5 h-3.5 ml-1.5" />
@@ -100,19 +103,22 @@ export default function Home() {
                   <article
                     key={post.id}
                     onClick={() => setSelectedArticle(post)}
-                    className="p-6 rounded-2xl bg-[#FAFCFF] border border-slate-200 space-y-3 group cursor-pointer hover:border-[#0c35a6] hover:shadow-md transition-all flex flex-col justify-between"
+                    className="p-6 rounded-2xl bg-[#FAFCFF] border border-slate-200/90 space-y-3 group cursor-pointer hover:border-[#0c35a6] hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden transform hover:-translate-y-1"
                   >
-                    <div className="space-y-2">
-                      <span className="text-[10px] font-extrabold text-[#B8962E] uppercase tracking-wider">
+                    {/* Top Accent Line */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0c35a6] via-[#D4AF37] to-[#06195c]"></div>
+
+                    <div className="space-y-2 relative z-10 pt-1">
+                      <span className="text-[10px] font-black uppercase tracking-wider text-[#B8962E] bg-amber-50 px-3 py-1 rounded-full border border-amber-200/60 inline-block">
                         {post.date} • {post.category}
                       </span>
-                      <h3 className="font-bold text-base text-[#0c35a6] group-hover:text-[#06195c] transition-colors leading-snug">
+                      <h3 className="font-extrabold text-base text-[#0c35a6] group-hover:text-[#06195c] transition-colors leading-snug">
                         {post.title}
                       </h3>
                       <p className="text-xs text-slate-500 leading-relaxed">{post.summary}</p>
                     </div>
 
-                    <div className="pt-3 border-t border-slate-200/70 text-[11px] font-bold text-[#0c35a6] group-hover:underline flex items-center justify-between">
+                    <div className="pt-3 border-t border-slate-200/70 text-[11px] font-bold text-[#0c35a6] group-hover:underline flex items-center justify-between relative z-10">
                       <span className="flex items-center">
                         <BookOpen className="w-3.5 h-3.5 mr-1" /> Baca Selengkapnya
                       </span>
