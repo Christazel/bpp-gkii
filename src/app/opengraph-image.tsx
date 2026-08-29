@@ -8,6 +8,12 @@ export const size = {
 export const contentType = 'image/png';
 
 export default async function Image() {
+  // Load Gabarito font for brand-consistent OG image typography
+  const gabaritoFont = await fetch(
+    new URL('https://fonts.gstatic.com/s/gabarito/v9/QGYwz_0dZAGKJJ3oSBEHtIIBRPtCjdJAaA.woff2')
+  ).then((res) => res.arrayBuffer()).catch(() => null);
+
+
   return new ImageResponse(
     (
       <div
@@ -20,7 +26,7 @@ export default async function Image() {
           justifyContent: 'space-between',
           backgroundColor: '#06195c',
           color: '#ffffff',
-          fontFamily: 'sans-serif',
+          fontFamily: gabaritoFont ? 'Gabarito' : 'sans-serif',
           padding: '60px',
           border: '12px solid #D4AF37',
           position: 'relative',
@@ -131,6 +137,16 @@ export default async function Image() {
     ),
     {
       ...size,
+      fonts: gabaritoFont
+        ? [
+            {
+              name: 'Gabarito',
+              data: gabaritoFont,
+              style: 'normal',
+              weight: 700,
+            },
+          ]
+        : [],
     }
   );
 }
