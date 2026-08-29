@@ -8,11 +8,17 @@ export const size = {
 export const contentType = 'image/png';
 
 export default async function Image() {
-  // Load Gabarito font for brand-consistent OG image typography
+  // Load Gabarito font — next/og requires TTF/OTF format (not woff2)
+  // Fetch via Google Fonts CSS API to get the correct binary
   const gabaritoFont = await fetch(
-    new URL('https://fonts.gstatic.com/s/gabarito/v9/QGYwz_0dZAGKJJ3oSBEHtIIBRPtCjdJAaA.woff2')
-  ).then((res) => res.arrayBuffer()).catch(() => null);
-
+    'https://fonts.googleapis.com/css2?family=Gabarito:wght@700&display=swap'
+  )
+    .then((res) => res.text())
+    .then((css) => {
+      const url = css.match(/src: url\(([^)]+)\)/)?.[1];
+      return url ? fetch(url).then((r) => r.arrayBuffer()) : null;
+    })
+    .catch(() => null);
 
   return new ImageResponse(
     (
