@@ -8,6 +8,18 @@ export const size = {
 export const contentType = 'image/png';
 
 export default async function Image() {
+  // Load Gabarito font — next/og requires TTF/OTF format (not woff2)
+  // Fetch via Google Fonts CSS API to get the correct binary
+  const gabaritoFont = await fetch(
+    'https://fonts.googleapis.com/css2?family=Gabarito:wght@700&display=swap'
+  )
+    .then((res) => res.text())
+    .then((css) => {
+      const url = css.match(/src: url\(([^)]+)\)/)?.[1];
+      return url ? fetch(url).then((r) => r.arrayBuffer()) : null;
+    })
+    .catch(() => null);
+
   return new ImageResponse(
     (
       <div
@@ -20,7 +32,7 @@ export default async function Image() {
           justifyContent: 'space-between',
           backgroundColor: '#06195c',
           color: '#ffffff',
-          fontFamily: 'sans-serif',
+          fontFamily: gabaritoFont ? 'Gabarito' : 'sans-serif',
           padding: '60px',
           border: '12px solid #D4AF37',
           position: 'relative',
@@ -131,6 +143,16 @@ export default async function Image() {
     ),
     {
       ...size,
+      fonts: gabaritoFont
+        ? [
+            {
+              name: 'Gabarito',
+              data: gabaritoFont,
+              style: 'normal',
+              weight: 700,
+            },
+          ]
+        : [],
     }
   );
 }
