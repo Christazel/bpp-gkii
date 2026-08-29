@@ -3,21 +3,21 @@ import bppData from '@/data/bpp-data.json';
 
 export default function SeminarySection() {
   return (
-    <div>
+    <section id="stt-affiliasi" aria-labelledby="stt-heading">
       <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
         <span className="text-[#B8962E] font-bold text-xs uppercase tracking-widest">
           Pendidikan Teologi
         </span>
-        <h2 className="text-3xl font-extrabold text-[#0c35a6]">Sekolah Tinggi Teologi Affiliasi</h2>
+        <h2 id="stt-heading" className="text-3xl font-extrabold text-[#0c35a6]">Sekolah Tinggi Teologi Affiliasi</h2>
         <p className="text-slate-500 text-xs sm:text-sm">
           Lembaga pendidikan tinggi teologi resmi BPP GKII.
         </p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6">
-        {bppData.seminaries.map((stt, idx) => (
+        {bppData.seminaries.map((stt) => (
           <div
-            key={idx}
+            key={stt.name}
             className="bg-[#FAFCFF] rounded-2xl p-6 border border-slate-200/90 flex flex-col justify-between space-y-4 hover:border-[#0c35a6] hover:shadow-xl transition-all duration-300 group relative overflow-hidden transform hover:-translate-y-1"
           >
             {/* Top Accent Line */}
@@ -42,6 +42,6 @@ export default function SeminarySection() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
