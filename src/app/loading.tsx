@@ -66,19 +66,19 @@ export default function Loading() {
           {/* Document cards grid skeleton */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="p-6 rounded-2xl bg-white border border-slate-200 space-y-4 shadow-xs animate-pulse">
+              <div key={i} className="p-6 rounded-2xl bg-white border border-slate-200 space-y-4 shadow-xs animate-shimmer">
                 <div className="flex justify-between items-center">
-                  <div className="w-12 h-5 bg-red-100 rounded-lg"></div>
+                  <div className="w-12 h-5 bg-red-100/80 rounded-lg"></div>
                   <div className="w-14 h-4 bg-slate-100 rounded"></div>
                 </div>
                 <div className="space-y-2 pt-2">
-                  <div className="w-20 h-3 bg-amber-100 rounded"></div>
-                  <div className="w-3/4 h-5 bg-slate-200 rounded-lg"></div>
+                  <div className="w-20 h-3 bg-amber-100/80 rounded"></div>
+                  <div className="w-3/4 h-5 bg-slate-200/60 rounded-lg"></div>
                   <div className="w-full h-8 bg-slate-100 rounded"></div>
                 </div>
                 <div className="pt-4 border-t border-slate-100 flex gap-2">
                   <div className="flex-1 h-9 bg-slate-100 rounded-xl"></div>
-                  <div className="flex-1 h-9 bg-[#0c35a6]/20 rounded-xl"></div>
+                  <div className="flex-1 h-9 bg-[#0c35a6]/10 rounded-xl"></div>
                 </div>
               </div>
             ))}
@@ -93,10 +93,10 @@ export default function Loading() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="p-8 rounded-2xl bg-white border border-slate-200 text-center space-y-4 shadow-xs animate-pulse">
-                <div className="w-20 h-20 rounded-2xl bg-slate-200 mx-auto"></div>
-                <div className="w-24 h-4 bg-amber-100 rounded mx-auto"></div>
-                <div className="w-40 h-6 bg-slate-200 rounded-lg mx-auto"></div>
+              <div key={i} className="p-8 rounded-2xl bg-white border border-slate-200 text-center space-y-4 shadow-xs animate-shimmer">
+                <div className="w-20 h-20 rounded-2xl bg-slate-200/70 mx-auto"></div>
+                <div className="w-24 h-4 bg-amber-100/80 rounded mx-auto"></div>
+                <div className="w-40 h-6 bg-slate-200/60 rounded-lg mx-auto"></div>
                 <div className="w-full h-12 bg-slate-100 rounded pt-2"></div>
               </div>
             ))}
@@ -113,15 +113,15 @@ export default function Loading() {
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {[1, 2, 3].map((i) => (
-                <div key={i} className="rounded-2xl bg-[#FAFCFF] border border-slate-200 p-6 space-y-4 animate-pulse relative overflow-hidden">
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-slate-200 rounded-t-2xl"></div>
-                  <div className="w-28 h-5 bg-amber-100 rounded-full mt-1"></div>
-                  <div className="w-3/4 h-5 bg-slate-200 rounded-lg"></div>
+                <div key={i} className="rounded-2xl bg-[#FAFCFF] border border-slate-200 p-6 space-y-4 animate-shimmer relative overflow-hidden">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-slate-200/80 rounded-t-2xl"></div>
+                  <div className="w-28 h-5 bg-amber-100/80 rounded-full mt-1"></div>
+                  <div className="w-3/4 h-5 bg-slate-200/60 rounded-lg"></div>
                   <div className="space-y-1.5">
                     <div className="w-full h-3 bg-slate-100 rounded"></div>
                     <div className="w-4/5 h-3 bg-slate-100 rounded"></div>
                   </div>
-                  <div className="w-32 h-4 bg-blue-100 rounded"></div>
+                  <div className="w-32 h-4 bg-blue-100/80 rounded"></div>
                 </div>
               ))}
             </div>
@@ -135,20 +135,20 @@ export default function Loading() {
               </div>
               <div className="grid md:grid-cols-3 gap-6">
                 {[1, 2, 3].map((i) => (
-                  <div key={i} className="rounded-2xl bg-[#FAFCFF] border border-slate-200 p-6 space-y-3 animate-pulse flex flex-col justify-between relative overflow-hidden">
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-slate-200 rounded-t-2xl"></div>
+                  <div key={i} className="rounded-2xl bg-[#FAFCFF] border border-slate-200 p-6 space-y-3 animate-shimmer flex flex-col justify-between relative overflow-hidden">
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-slate-200/80 rounded-t-2xl"></div>
                     <div className="space-y-2 pt-1">
-                      <div className="w-36 h-5 bg-amber-100 rounded-full"></div>
-                      <div className="w-full h-5 bg-slate-200 rounded-lg"></div>
-                      <div className="w-4/5 h-5 bg-slate-200 rounded-lg"></div>
+                      <div className="w-36 h-5 bg-amber-100/80 rounded-full"></div>
+                      <div className="w-full h-5 bg-slate-200/60 rounded-lg"></div>
+                      <div className="w-4/5 h-5 bg-slate-200/60 rounded-lg"></div>
                       <div className="space-y-1.5 pt-1">
                         <div className="w-full h-3 bg-slate-100 rounded"></div>
                         <div className="w-5/6 h-3 bg-slate-100 rounded"></div>
                       </div>
                     </div>
                     <div className="pt-3 border-t border-slate-200/70 flex items-center justify-between">
-                      <div className="w-28 h-3 bg-blue-100 rounded"></div>
-                      <div className="w-4 h-4 bg-slate-200 rounded"></div>
+                      <div className="w-28 h-3 bg-blue-100/80 rounded"></div>
+                      <div className="w-4 h-4 bg-slate-200/60 rounded"></div>
                     </div>
                   </div>
                 ))}
