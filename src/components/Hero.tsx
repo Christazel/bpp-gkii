@@ -1,4 +1,5 @@
 import { FileText, ArrowDown, ShieldCheck, MapPin, Building2 } from 'lucide-react';
+import bppData from '@/data/bpp-data.json';
 
 export default function Hero() {
   return (
@@ -43,7 +44,8 @@ export default function Hero() {
           <div className="space-y-0.5">
             <div className="flex items-center justify-center text-[#D4AF37] mb-1">
               <MapPin className="w-4 h-4 mr-1 opacity-80" />
-              <span className="text-xl sm:text-2xl font-black text-white">13</span>
+              {/* Derived from bppData.regions.length — stays in sync automatically */}
+              <span className="text-xl sm:text-2xl font-black text-white">{bppData.regions.length}</span>
             </div>
             <p className="text-[10px] sm:text-xs text-slate-300 font-medium uppercase tracking-wider">Wilayah BPW</p>
           </div>
@@ -59,7 +61,8 @@ export default function Hero() {
           <div className="space-y-0.5">
             <div className="flex items-center justify-center text-[#D4AF37] mb-1">
               <Building2 className="w-4 h-4 mr-1 opacity-80" />
-              <span className="text-xl sm:text-2xl font-black text-white">DKI</span>
+              {/* Derived from bppData.legalities.secretariatCity */}
+              <span className="text-xl sm:text-2xl font-black text-white">{bppData.legalities.secretariatCity}</span>
             </div>
             <p className="text-[10px] sm:text-xs text-slate-300 font-medium uppercase tracking-wider">Sekretariat Pusat</p>
           </div>
