@@ -42,8 +42,18 @@ export default function PressReleaseSection() {
           {bppData.pressReleases.map((post) => (
             <article
               key={post.id}
+              role="button"
+              tabIndex={0}
+              aria-label={`Baca warta: ${post.title}`}
               onClick={() => setSelectedArticle(post)}
-              className="p-6 rounded-2xl bg-[#FAFCFF] border border-slate-200/90 space-y-3 group cursor-pointer hover:border-[#0c35a6] hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden transform hover:-translate-y-1"
+              onKeyDown={(e) => {
+                // WCAG: activate on Enter or Space, same as native button behavior
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setSelectedArticle(post);
+                }
+              }}
+              className="p-6 rounded-2xl bg-[#FAFCFF] border border-slate-200/90 space-y-3 group cursor-pointer hover:border-[#0c35a6] hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-[#0c35a6]/50 focus:border-[#0c35a6]"
             >
               {/* Top Accent Line */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0c35a6] via-[#D4AF37] to-[#06195c]"></div>
