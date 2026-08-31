@@ -7,6 +7,9 @@ import bppData from '@/data/bpp-data.json';
 export default function Officers() {
   const [organigramModalOpen, setOrganigramModalOpen] = useState(false);
 
+  // Derive organigram file metadata from bpp-data.json (doc-4) — never hardcode file info
+  const organigramDoc = bppData.documents.find((doc) => doc.id === 'doc-4');
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -124,13 +127,13 @@ export default function Officers() {
               <Network className="w-10 h-10 text-[#0c35a6] mx-auto opacity-80" />
               <p className="text-xs font-semibold text-slate-800">Dokumen Struktur Terverifikasi BPP</p>
               <span className="inline-block text-[10px] bg-white px-3 py-1 rounded-full text-slate-500 border border-slate-200 font-medium">
-                Ukuran File: 850 KB • Format: PDF
+                Ukuran File: {organigramDoc?.fileSize ?? '—'} • Format: {organigramDoc?.format ?? 'PDF'}
               </span>
             </div>
 
             <a
-              href="/pdf/Organigram_BPP_GKII.pdf"
-              download="Organigram_BPP_GKII.pdf"
+              href={organigramDoc?.downloadUrl ?? '/pdf/Organigram_BPP_GKII.pdf'}
+              download={organigramDoc?.downloadUrl?.split('/').pop() ?? 'Organigram_BPP_GKII.pdf'}
               onClick={() => setOrganigramModalOpen(false)}
               className="w-full py-3 rounded-xl bg-[#0c35a6] hover:bg-[#06195c] text-white font-bold text-xs transition-colors flex items-center justify-center space-x-2 shadow-md cursor-pointer"
             >

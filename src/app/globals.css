@@ -43,6 +43,19 @@
   animation: pulseGlow 5s ease-in-out infinite;
 }
 
+/* Premium skeleton shimmer — replaces generic pulse on loading states.
+   Uses a subtle left-to-right sweep consistent with BPP GKII card colors. */
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    #e2e8f0 0%,
+    #f1f5f9 40%,
+    #e2e8f0 80%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+
 /* Gold Gradient Utility */
 .gradient-gold-text {
   background: linear-gradient(135deg, #FFE57F 0%, #FFD700 50%, #D4AF37 100%);
