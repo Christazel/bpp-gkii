@@ -71,7 +71,7 @@ export default function RegionalDirectory() {
 
             {/* Right Column: Premium Region Details (8 Cols) */}
             {selectedRegion && (
-              <div className="lg:col-span-8 space-y-6 animate-in fade-in duration-200">
+              <div key={selectedId} className="lg:col-span-8 space-y-6 animate-in fade-in duration-200">
                 <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-200/80">
                   <div className="flex items-center space-x-3">
                     <span className="text-xs font-black text-[#B8962E] bg-amber-50 border border-amber-200 px-3 py-1 rounded-lg uppercase tracking-wider shadow-2xs">
