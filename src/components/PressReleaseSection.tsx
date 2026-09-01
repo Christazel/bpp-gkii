@@ -40,7 +40,9 @@ export default function PressReleaseSection() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {bppData.pressReleases.map((post) => (
-            <article
+            // div instead of article: <article> has implicit ARIA role 'article' which
+            // conflicts with role="button". <div> has no implicit role, so role="button" is valid.
+            <div
               key={post.id}
               role="button"
               tabIndex={0}
@@ -74,9 +76,10 @@ export default function PressReleaseSection() {
                 </span>
                 <span>→</span>
               </div>
-            </article>
+            </div>
           ))}
         </div>
+
       </div>
 
       {/* ARTICLE FULL READ MODAL */}
