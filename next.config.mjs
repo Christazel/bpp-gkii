@@ -2,6 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  // Performance: auto tree-shake lucide-react — only bundle icons actually used per page
+  // Estimated savings: 30-60 KiB from initial JS bundle
+  experimental: {
+    optimizePackageImports: ['lucide-react'],
+  },
   images: {
     remotePatterns: [
       {
