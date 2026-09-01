@@ -1,12 +1,19 @@
+import dynamic from 'next/dynamic';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import DocumentCenter from '@/components/DocumentCenter';
-import Officers from '@/components/Officers';
-import RegionalDirectory from '@/components/RegionalDirectory';
-import SeminarySection from '@/components/SeminarySection';
-import PressReleaseSection from '@/components/PressReleaseSection';
-import Footer from '@/components/Footer';
-import ScrollToTop from '@/components/ScrollToTop';
+
+// Below-fold components — JS code-split into separate lazy chunks.
+// HTML is still SSR'd (no ssr:false) so SEO and initial paint are unaffected.
+// Only client-side hydration JS is deferred, reducing initial TBT significantly.
+const DocumentCenter = dynamic(() => import('@/components/DocumentCenter'));
+const Officers = dynamic(() => import('@/components/Officers'));
+const RegionalDirectory = dynamic(() => import('@/components/RegionalDirectory'));
+const SeminarySection = dynamic(() => import('@/components/SeminarySection'));
+const PressReleaseSection = dynamic(() => import('@/components/PressReleaseSection'));
+const Footer = dynamic(() => import('@/components/Footer'));
+// ScrollToTop is 'use client' and its window usage is inside useEffect (client-only)
+// Regular dynamic() is sufficient — ssr:false is not allowed in Server Components
+const ScrollToTop = dynamic(() => import('@/components/ScrollToTop'));
 
 export default function Home() {
   return (

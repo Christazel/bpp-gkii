@@ -4,8 +4,12 @@ import './globals.css';
 
 const gabarito = Gabarito({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
+  // Removed '500' and '600' — not used in CSS, saves ~15-25KB font payload
+  weight: ['400', '700', '800', '900'],
   variable: '--font-gabarito',
+  // display:'swap' renders text immediately with fallback font, swaps to Gabarito when loaded
+  // Eliminates font-induced FCP/LCP delay (render-blocking fonts)
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
