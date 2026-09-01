@@ -45,11 +45,17 @@ const nextConfig = {
     ];
 
     const ContentSecurityPolicy = cspDirectives.join('; ');
-    // Report-Only uses the same directives but never blocks — only reports violations to devtools console
-    const ContentSecurityPolicyReportOnly = cspDirectives.join('; ');
+    // Report-Only: same policy but never blocks — violations appear in devtools console only.
+    // IMPORTANT: 'upgrade-insecure-requests' must be excluded — it is meaningless in report-only
+    // mode and the browser logs a console error if included.
+    const ContentSecurityPolicyReportOnly = cspDirectives
+      .filter((d) => d !== 'upgrade-insecure-requests')
+      .join('; ');
 
-    // Permissions-Policy: explicitly deny all modern browser APIs not used by this portal.
-    // Covers 18 APIs to prevent fingerprinting, hardware access, and feature abuse.
+    // Permissions-Policy: explicitly deny browser APIs not used by this portal.
+    // Only includes features recognized by modern browsers (Chrome 88+, Edge 88+).
+    // Removed: 'ambient-light-sensor' (deprecated from spec, causes console error)
+    //          'document-domain' (not a Permissions-Policy feature, causes console error)
     const PermissionsPolicy = [
       'camera=()',
       'microphone=()',
@@ -62,9 +68,7 @@ const nextConfig = {
       'magnetometer=()',         // No hardware sensor access
       'gyroscope=()',
       'accelerometer=()',
-      'ambient-light-sensor=()',
       'display-capture=()',      // No screen capture
-      'document-domain=()',      // Prevent document.domain relaxation attacks
       'encrypted-media=()',      // No DRM media
       'fullscreen=(self)',       // Allow fullscreen only from same origin
       'picture-in-picture=()',   // No Picture-in-Picture
