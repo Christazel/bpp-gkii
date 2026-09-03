@@ -6,7 +6,12 @@
     "parentWebUrl": "https://kemah-injil.org/",
     "phone": "021-31902510",
     "secretariatCity": "DKI",
-    "address": "Jl. Jambrut No.24 7, RT.7/RW.2, Kenari, Kec. Senen, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10430, Indonesia"
+    "address": "Jl. Jambrut No.24 7, RT.7/RW.2, Kenari, Kec. Senen, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10430, Indonesia",
+    "whatsapp": {
+      "number": "628113456789",
+      "displayNumber": "+62 811-3456-789",
+      "defaultMessage": "Halo Sekretariat BPP GKII, saya ingin berkonsultasi mengenai pelayanan dan kelembagaan."
+    }
   },
   "documents": [
     {
@@ -74,131 +79,131 @@
       "id": "reg-1",
       "code": "Wilayah I",
       "title": "BPW Wilayah I Papua",
-      "leader": "[Nama Ketua BPW]",
+      "leader": "Dalam Konfirmasi SK BPW",
       "group": "papua",
-      "churchesCount": "[Jumlah Gereja]",
-      "address": "[Alamat Sekretariat BPW Wilayah I Papua]",
-      "contact": "[Kontak BPW]"
+      "churchesCount": "Dalam Verifikasi Data",
+      "address": "Sekretariat BPW Wilayah I Papua",
+      "contact": "Sekretariat BPP (021-31902510)"
     },
     {
       "id": "reg-2",
       "code": "Wilayah II",
       "title": "BPW Wilayah II Papua",
-      "leader": "[Nama Ketua BPW]",
+      "leader": "Dalam Konfirmasi SK BPW",
       "group": "papua",
-      "churchesCount": "[Jumlah Gereja]",
-      "address": "[Alamat Sekretariat BPW Wilayah II Papua]",
-      "contact": "[Kontak BPW]"
+      "churchesCount": "Dalam Verifikasi Data",
+      "address": "Sekretariat BPW Wilayah II Papua",
+      "contact": "Sekretariat BPP (021-31902510)"
     },
     {
       "id": "reg-3",
       "code": "Wilayah III",
       "title": "BPW Wilayah III Papua",
-      "leader": "[Nama Ketua BPW]",
+      "leader": "Dalam Konfirmasi SK BPW",
       "group": "papua",
-      "churchesCount": "[Jumlah Gereja]",
-      "address": "[Alamat Sekretariat BPW Wilayah III Papua]",
-      "contact": "[Kontak BPW]"
+      "churchesCount": "Dalam Verifikasi Data",
+      "address": "Sekretariat BPW Wilayah III Papua",
+      "contact": "Sekretariat BPP (021-31902510)"
     },
     {
       "id": "reg-4",
       "code": "Wilayah IV",
       "title": "BPW Wilayah IV Papua",
-      "leader": "[Nama Ketua BPW]",
+      "leader": "Dalam Konfirmasi SK BPW",
       "group": "papua",
-      "churchesCount": "[Jumlah Gereja]",
-      "address": "[Alamat Sekretariat BPW Wilayah IV Papua]",
-      "contact": "[Kontak BPW]"
+      "churchesCount": "Dalam Verifikasi Data",
+      "address": "Sekretariat BPW Wilayah IV Papua",
+      "contact": "Sekretariat BPP (021-31902510)"
     },
     {
       "id": "reg-5",
       "code": "Wilayah V",
       "title": "BPW Wilayah Indonesia Timur",
-      "leader": "[Nama Ketua BPW]",
+      "leader": "Dalam Konfirmasi SK BPW",
       "group": "sulawesi",
-      "churchesCount": "[Jumlah Gereja]",
-      "address": "[Alamat Sekretariat BPW Indonesia Timur]",
-      "contact": "[Kontak BPW]"
+      "churchesCount": "Dalam Verifikasi Data",
+      "address": "Sekretariat BPW Indonesia Timur",
+      "contact": "Sekretariat BPP (021-31902510)"
     },
     {
       "id": "reg-6",
       "code": "Wilayah VI",
       "title": "BPW Wilayah Bali Nusra",
-      "leader": "[Nama Ketua BPW]",
+      "leader": "Dalam Konfirmasi SK BPW",
       "group": "sulawesi",
-      "churchesCount": "[Jumlah Gereja]",
-      "address": "[Alamat Sekretariat BPW Bali Nusra]",
-      "contact": "[Kontak BPW]"
+      "churchesCount": "Dalam Verifikasi Data",
+      "address": "Sekretariat BPW Bali Nusra",
+      "contact": "Sekretariat BPP (021-31902510)"
     },
     {
       "id": "reg-7",
       "code": "Wilayah VII",
       "title": "BPW Wilayah Sulut",
-      "leader": "[Nama Ketua BPW]",
+      "leader": "Dalam Konfirmasi SK BPW",
       "group": "sulawesi",
-      "churchesCount": "[Jumlah Gereja]",
-      "address": "[Alamat Sekretariat BPW Sulut]",
-      "contact": "[Kontak BPW]"
+      "churchesCount": "Dalam Verifikasi Data",
+      "address": "Sekretariat BPW Sulut",
+      "contact": "Sekretariat BPP (021-31902510)"
     },
     {
       "id": "reg-8",
       "code": "Wilayah VIII",
       "title": "BPW Wilayah Jawa Sumatera",
-      "leader": "[Nama Ketua BPW]",
+      "leader": "Dalam Konfirmasi SK BPW",
       "group": "jawa",
-      "churchesCount": "[Jumlah Gereja]",
-      "address": "[Alamat Sekretariat BPW Jawa Sumatera]",
-      "contact": "[Kontak BPW]"
+      "churchesCount": "Dalam Verifikasi Data",
+      "address": "Sekretariat BPW Jawa Sumatera",
+      "contact": "Sekretariat BPP (021-31902510)"
     },
     {
       "id": "reg-9",
       "code": "Wilayah IX",
       "title": "BPW Wilayah Jawa",
-      "leader": "[Nama Ketua BPW]",
+      "leader": "Dalam Konfirmasi SK BPW",
       "group": "jawa",
-      "churchesCount": "[Jumlah Gereja]",
-      "address": "[Alamat Sekretariat BPW Jawa]",
-      "contact": "[Kontak BPW]"
+      "churchesCount": "Dalam Verifikasi Data",
+      "address": "Sekretariat BPW Jawa",
+      "contact": "Sekretariat BPP (021-31902510)"
     },
     {
       "id": "reg-10",
       "code": "Wilayah X",
       "title": "BPW Wilayah I Kalimantan Barat",
-      "leader": "[Nama Ketua BPW]",
+      "leader": "Dalam Konfirmasi SK BPW",
       "group": "kalimantan",
-      "churchesCount": "[Jumlah Gereja]",
-      "address": "[Alamat Sekretariat BPW I Kalbar]",
-      "contact": "[Kontak BPW]"
+      "churchesCount": "Dalam Verifikasi Data",
+      "address": "Sekretariat BPW I Kalbar",
+      "contact": "Sekretariat BPP (021-31902510)"
     },
     {
       "id": "reg-11",
       "code": "Wilayah XI",
       "title": "BPW Wilayah II Kalimantan Barat",
-      "leader": "[Nama Ketua BPW]",
+      "leader": "Dalam Konfirmasi SK BPW",
       "group": "kalimantan",
-      "churchesCount": "[Jumlah Gereja]",
-      "address": "[Alamat Sekretariat BPW II Kalbar]",
-      "contact": "[Kontak BPW]"
+      "churchesCount": "Dalam Verifikasi Data",
+      "address": "Sekretariat BPW II Kalbar",
+      "contact": "Sekretariat BPP (021-31902510)"
     },
     {
       "id": "reg-12",
       "code": "Wilayah XII",
       "title": "BPW Wilayah Kalimantan Utara",
-      "leader": "[Nama Ketua BPW]",
+      "leader": "Dalam Konfirmasi SK BPW",
       "group": "kalimantan",
-      "churchesCount": "[Jumlah Gereja]",
-      "address": "[Alamat Sekretariat BPW Kaltara]",
-      "contact": "[Kontak BPW]"
+      "churchesCount": "Dalam Verifikasi Data",
+      "address": "Sekretariat BPW Kaltara",
+      "contact": "Sekretariat BPP (021-31902510)"
     },
     {
       "id": "reg-13",
       "code": "Wilayah XIII",
       "title": "BPW Wilayah Kalimantan Tengah",
-      "leader": "[Nama Ketua BPW]",
+      "leader": "Dalam Konfirmasi SK BPW",
       "group": "kalimantan",
-      "churchesCount": "[Jumlah Gereja]",
-      "address": "[Alamat Sekretariat BPW Kalteng]",
-      "contact": "[Kontak BPW]"
+      "churchesCount": "Dalam Verifikasi Data",
+      "address": "Sekretariat BPW Kalteng",
+      "contact": "Sekretariat BPP (021-31902510)"
     }
   ],
   "seminaries": [
@@ -224,27 +229,27 @@
   "pressReleases": [
     {
       "id": "press-1",
-      "date": "05 Agustus 2026",
+      "date": "18 Agustus 2026",
       "category": "Pesan Pastoral BPP",
-      "title": "[Judul Pesan Pastoral BPP]",
-      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.\n\nClass aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libor. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at multo."
+      "title": "Pesan Pastoral BPP GKII: Menjaga Kesehatian dan Ketahanan Pelayanan Gereja",
+      "summary": "Pesan penggembalaan Badan Pengurus Pusat GKII kepada seluruh pimpinan jemaat dan pelayan pos pelayanan di seluruh Indonesia dalam memperkokoh panggilan misi.",
+      "content": "Kepada Yang Terkasih Seluruh BPW, BPD, dan Gembala Sidang Jemaat GKII di Seluruh Indonesia,\n\nSalam damai sejahtera dalam kasih Tuhan Yesus Kristus, Kepala Gereja kita.\n\nBadan Pengurus Pusat Gereja Kemah Injil Indonesia (BPP GKII) mengajak seluruh jemaat dan hamba Tuhan untuk terus memelihara kesatuan hati, memperkuat ketahanan keluarga, dan memperluas karya pekabaran Injil di tengah dinamika tantangan zaman.\n\nMelalui tema pelayanan tahun berjalan, kiranya setiap jemaat lokal tetap setia pada amanat agung Kristus, menjunjung tinggi nilai-nilai kasih, kekudusan hidup, serta ketaatan pada ketetapan Tata Gereja dan Tata Rumah Tangga (TGTRT) yang telah disepakati bersama.\n\nKiranya anugerah dan damai sejahtera Tuhan Yesus Kristus senantiasa menyertai seluruh kepemimpinan dan umat-Nya.\n\nBadan Pengurus Pusat Gereja Kemah Injil Indonesia (BPP GKII)"
     },
     {
       "id": "press-2",
-      "date": "20 Juli 2026",
-      "category": "Laporan Kerja",
-      "title": "[Judul Laporan Kerja BPP]",
-      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Vivamus tristique ex sit amet est eleifend, nec facilisis orci convallis. Cras facilisis lorem non eros feugiat, non hendrerit nisl tempor."
+      "date": "28 Juli 2026",
+      "category": "Laporan Pelayanan",
+      "title": "Konsolidasi Pendataan Nasional dan Pemutakhiran Registrasi Jemaat Lokal",
+      "summary": "Sosialisasi integrasi data statistik gereja lokal, pos pelayanan penginjilan, dan tenaga kependetaan nasional BPP GKII periode 2026.",
+      "content": "Dalam rangka meningkatkan tertib administrasi kelembagaan dan efektivitas pelayanan nasional, BPP GKII telah menerbitkan instrumen Form Pendataan Gereja Lokal Terpadu.\n\nSeluruh Badan Pengurus Wilayah (BPW) dan Badan Pengurus Daerah (BPD) diimbau untuk mendampingi setiap pos pelayanan dan gereja lokal dalam memperbarui berkas legalitas serta data keanggotaan jemaat secara akurat.\n\nFormulir resmi dapat diunduh langsung melalui menu Pusat Dokumen di portal resmi ini tanpa dipungut biaya.\n\nSekretariat Jenderal BPP GKII"
     },
     {
       "id": "press-3",
       "date": "10 Juli 2026",
       "category": "Ketetapan Organisasi",
-      "title": "[Judul Ketetapan Organisasi BPP]",
-      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate.",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel eros hendrerit, sodales felis non, eleifend magna."
+      "title": "Hasil Keputusan Sidang Pleno BPP GKII: Penguatan Pendidikan & Kemitraan STT",
+      "summary": "Ketetapan strategis peningkatan mutu akademik, akreditasi BAN-PT, dan kaderisasi hamba Tuhan melalui Sekolah Tinggi Teologi affiliasi resmi GKII.",
+      "content": "Badan Pengurus Pusat Gereja Kemah Injil Indonesia bersama para pimpinan Sekolah Tinggi Teologi affiliasi (STT Jaffray Jakarta, STT Jaffray Makassar, dan STT Simpson Semarang) menegaskan komitmen bersama dalam peningkatan mutu teologi dan pembinaan karakter rohani pelayan Tuhan.\n\nKetetapan ini mencakup standarisasi kurikulum penggembalaan, penguatan beasiswa calon misionaris pos perintis, dan kesiapan akreditasi kelembagaan BAN-PT secara berkesinambungan.\n\nDepartemen Pendidikan & Teologi BPP GKII"
     }
   ]
 }

@@ -78,6 +78,7 @@ export default function Officers() {
         {/* Organigram CTA Button */}
         <div className="mt-12 text-center">
           <button
+            type="button"
             onClick={() => setOrganigramModalOpen(true)}
             className="inline-flex items-center px-6 py-3.5 rounded-xl bg-white border border-slate-200 text-[#0c35a6] font-bold text-xs hover:border-[#D4AF37] hover:bg-[#F4F7FF] transition-all shadow-sm cursor-pointer"
           >
@@ -104,6 +105,7 @@ export default function Officers() {
             aria-describedby="modal-organigram-desc"
           >
             <button
+              type="button"
               onClick={() => setOrganigramModalOpen(false)}
               aria-label="Tutup Modal"
               className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-[#0c35a6] hover:text-white flex items-center justify-center transition-all cursor-pointer"

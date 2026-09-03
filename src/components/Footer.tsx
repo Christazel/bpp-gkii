@@ -64,12 +64,12 @@ export default function Footer() {
                 <li className="flex items-start">
                   <MapPin className="w-4 h-4 mr-2.5 text-[#D4AF37] shrink-0 mt-0.5" />
                   <span className="leading-relaxed">
-                    Jl. Jambrut No.24 7, RT.7/RW.2, Kenari, Kec. Senen, Kota Jakarta Pusat, DKI Jakarta 10430
+                    {bppData.legalities.address}
                   </span>
                 </li>
                 <li className="flex items-center">
                   <Phone className="w-4 h-4 mr-2.5 text-[#D4AF37] shrink-0" />
-                  <span>021-31902510</span>
+                  <span>{bppData.legalities.phone}</span>
                 </li>
               </ul>
             </div>
@@ -112,7 +112,7 @@ export default function Footer() {
 
       {/* JELAJAHKODE STYLE FLOATING WHATSAPP BUTTON */}
       <a
-        href="https://wa.me/628113456789?text=Halo%20Sekretariat%20BPP%20GKII,%20saya%20ingin%20berkonsultasi"
+        href={`https://wa.me/${bppData.legalities.whatsapp.number}?text=${encodeURIComponent(bppData.legalities.whatsapp.defaultMessage)}`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Hubungi WhatsApp BPP GKII"

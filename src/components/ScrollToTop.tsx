@@ -28,6 +28,7 @@ export default function ScrollToTop() {
 
   return (
     <button
+      type="button"
       onClick={scrollToTop}
       aria-label="Kembali ke atas halaman"
       className={`fixed bottom-28 right-7 z-40 p-3 rounded-full bg-[#06195c] hover:bg-[#0c35a6] text-[#D4AF37] border border-[#D4AF37]/40 shadow-2xl transition-all duration-300 transform hover:scale-110 cursor-pointer ${

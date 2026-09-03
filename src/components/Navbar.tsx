@@ -86,6 +86,7 @@ export default function Navbar() {
 
             {/* Hamburger Mobile Toggle */}
             <button
+              type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "Tutup Menu Navigasi" : "Buka Menu Navigasi"}
               aria-expanded={mobileMenuOpen}
