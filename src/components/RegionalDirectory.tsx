@@ -55,6 +55,7 @@ export default function RegionalDirectory() {
                   {bppData.regions.map((reg) => (
                     <button
                       key={reg.id}
+                      type="button"
                       onClick={() => setSelectedId(reg.id)}
                       className={`px-2.5 py-1 text-[10px] font-bold rounded-lg transition-all ${
                         reg.id === selectedId

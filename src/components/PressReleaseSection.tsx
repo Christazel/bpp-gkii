@@ -99,6 +99,7 @@ export default function PressReleaseSection() {
             aria-describedby="modal-article-content"
           >
             <button
+              type="button"
               onClick={() => setSelectedArticle(null)}
               aria-label="Tutup Warta"
               className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-[#0c35a6] hover:text-white flex items-center justify-center transition-all cursor-pointer"
@@ -121,6 +122,7 @@ export default function PressReleaseSection() {
 
               <div className="pt-4 flex justify-end">
                 <button
+                  type="button"
                   onClick={() => setSelectedArticle(null)}
                   className="px-6 py-2.5 rounded-xl bg-[#0c35a6] hover:bg-[#06195c] text-white font-bold text-xs transition-colors cursor-pointer"
                 >

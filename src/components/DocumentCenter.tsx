@@ -132,6 +132,7 @@ export default function DocumentCenter() {
             />
             {searchQuery && (
               <button
+                type="button"
                 onClick={() => setSearchQuery('')}
                 className="absolute right-3 p-1 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100"
               >
@@ -146,8 +147,9 @@ export default function DocumentCenter() {
           <div className="text-center py-12 bg-[#FAFCFF] rounded-2xl border border-dashed border-slate-300">
             <p className="text-xs text-slate-500 font-semibold">Tidak ada dokumen yang sesuai dengan kata kunci &ldquo;{searchQuery}&rdquo;.</p>
             <button
+              type="button"
               onClick={() => setSearchQuery('')}
-              className="mt-3 text-xs font-bold text-[#0c35a6] hover:underline"
+              className="mt-3 text-xs font-bold text-[#0c35a6] hover:underline cursor-pointer"
             >
               Reset Pencarian
             </button>
@@ -188,6 +190,7 @@ export default function DocumentCenter() {
 
                 <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-2 relative z-10">
                   <button
+                    type="button"
                     onClick={() =>
                       setModalData({
                         title: doc.title,
@@ -204,6 +207,7 @@ export default function DocumentCenter() {
                   </button>
 
                   <button
+                    type="button"
                     onClick={() => handleShare(doc.title, doc.description)}
                     aria-label={`Bagikan ${doc.title}`}
                     className="p-2 text-xs font-semibold text-slate-600 bg-slate-50 hover:bg-slate-100 border border-slate-200 hover:text-[#0c35a6] hover:border-[#0c35a6] rounded-xl transition-all flex items-center justify-center cursor-pointer"
@@ -245,6 +249,7 @@ export default function DocumentCenter() {
             aria-describedby="modal-doc-desc"
           >
             <button
+              type="button"
               onClick={() => setModalData(null)}
               aria-label="Tutup Preview"
               className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-[#0c35a6] hover:text-white flex items-center justify-center transition-all cursor-pointer"
@@ -270,6 +275,7 @@ export default function DocumentCenter() {
 
             <div className="flex flex-col sm:flex-row gap-2.5 pt-2">
               <button
+                type="button"
                 onClick={handlePrint}
                 className="flex-1 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition-colors flex items-center justify-center space-x-1.5 cursor-pointer"
               >
@@ -278,6 +284,7 @@ export default function DocumentCenter() {
               </button>
 
               <button
+                type="button"
                 onClick={() => handleShare(modalData.title, modalData.desc)}
                 className="flex-1 py-2.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-[#B8962E] border border-amber-200/80 font-bold text-xs transition-colors flex items-center justify-center space-x-1.5 cursor-pointer"
               >
