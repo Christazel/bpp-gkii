@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Gabarito } from 'next/font/google';
+import bppData from '@/data/bpp-data.json';
 import './globals.css';
 
 const gabarito = Gabarito({
@@ -11,6 +12,30 @@ const gabarito = Gabarito({
   // Eliminates font-induced FCP/LCP delay (render-blocking fonts)
   display: 'swap',
 });
+
+// Schema.org JSON-LD structured data for Google Knowledge Graph & Rich Snippets
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ReligiousOrganization',
+  name: 'Badan Pengurus Pusat Gereja Kemah Injil Indonesia',
+  alternateName: ['BPP GKII', 'Gereja Kemah Injil Indonesia', 'GKII'],
+  url: 'https://bpp-gkii.vercel.app',
+  logo: 'https://bpp-gkii.vercel.app/gkii-logo-long.png',
+  image: 'https://bpp-gkii.vercel.app/og-image.png',
+  description:
+    'Portal Kelembagaan, Regulasi, Tata Gereja (TGTRT), Surat Edaran BPP, dan Layanan Resmi Badan Pengurus Pusat Gereja Kemah Injil Indonesia (BPP GKII).',
+  telephone: `+62-${bppData.legalities.phone.replace(/^0/, '')}`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Jl. Jambrut No.24 7, RT.7/RW.2, Kenari, Kec. Senen',
+    addressLocality: 'Jakarta Pusat',
+    addressRegion: 'DKI Jakarta',
+    postalCode: '10430',
+    addressCountry: 'ID',
+  },
+  identifier: bppData.legalities.skNumber,
+  sameAs: [bppData.legalities.parentWebUrl],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://bpp-gkii.vercel.app'),
@@ -78,7 +103,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id" className={`${gabarito.variable} scroll-smooth`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+      </head>
       <body className="font-sans antialiased bg-[#FAFCFF] text-slate-900">{children}</body>
     </html>
   );
 }
+
