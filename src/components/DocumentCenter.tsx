@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FileText, Eye, Download, X, FileCheck2, CheckCircle2, Search, Share2, Printer } from 'lucide-react';
 import bppData from '@/data/bpp-data.json';
 
@@ -19,6 +19,7 @@ export default function DocumentCenter() {
     format: string;
   } | null>(null);
   const [toastMsg, setToastMsg] = useState<string | null>(null);
+  const toastTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Dynamically derive distinct categories from bppData.documents while preserving order
   const categories = [
@@ -49,10 +50,23 @@ export default function DocumentCenter() {
     };
   }, [modalData]);
 
+  // Clean up pending toast timers on unmount
+  useEffect(() => {
+    return () => {
+      if (toastTimeoutRef.current) {
+        clearTimeout(toastTimeoutRef.current);
+      }
+    };
+  }, []);
+
   const triggerToast = (msg: string) => {
+    if (toastTimeoutRef.current) {
+      clearTimeout(toastTimeoutRef.current);
+    }
     setToastMsg(msg);
-    setTimeout(() => {
+    toastTimeoutRef.current = setTimeout(() => {
       setToastMsg(null);
+      toastTimeoutRef.current = null;
     }, 3000);
   };
 
