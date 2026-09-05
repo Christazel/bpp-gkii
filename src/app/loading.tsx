@@ -61,8 +61,17 @@ export default function Loading() {
             <div className="w-28 h-4 bg-amber-100 rounded mx-auto animate-pulse"></div>
             <div className="w-64 h-8 bg-slate-200 rounded-xl mx-auto animate-pulse"></div>
           </div>
-          {/* Search bar skeleton */}
-          <div className="w-full max-w-xl mx-auto h-12 bg-slate-200/70 rounded-2xl animate-pulse"></div>
+          {/* Search bar & filter pills skeleton */}
+          <div className="space-y-4 max-w-2xl mx-auto">
+            <div className="w-full h-12 bg-slate-200/70 rounded-2xl animate-pulse"></div>
+            <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
+              <div className="h-8 w-24 bg-slate-200/60 rounded-xl animate-pulse"></div>
+              <div className="h-8 w-36 bg-slate-200/60 rounded-xl animate-pulse"></div>
+              <div className="h-8 w-32 bg-slate-200/60 rounded-xl animate-pulse"></div>
+              <div className="h-8 w-36 bg-slate-200/60 rounded-xl animate-pulse"></div>
+              <div className="h-8 w-32 bg-slate-200/60 rounded-xl animate-pulse"></div>
+            </div>
+          </div>
           {/* Document cards grid skeleton */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[1, 2, 3, 4].map((i) => (
