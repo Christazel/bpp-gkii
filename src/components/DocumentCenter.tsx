@@ -125,14 +125,15 @@ export default function DocumentCenter() {
     window.print();
   };
 
+  const trimmedQuery = searchQuery.trim().toLowerCase();
   const filteredDocs = bppData.documents.filter((doc) => {
     const matchesCategory =
       selectedCategory === 'Semua' || doc.category === selectedCategory;
     const matchesSearch =
-      searchQuery === '' ||
-      doc.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      doc.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      doc.category.toLowerCase().includes(searchQuery.toLowerCase());
+      trimmedQuery === '' ||
+      doc.title.toLowerCase().includes(trimmedQuery) ||
+      doc.description.toLowerCase().includes(trimmedQuery) ||
+      doc.category.toLowerCase().includes(trimmedQuery);
 
     return matchesCategory && matchesSearch;
   });
