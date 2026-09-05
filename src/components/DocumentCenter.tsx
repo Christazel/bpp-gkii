@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FileText, Eye, Download, X, FileCheck2, CheckCircle2, Search, Share2, Printer } from 'lucide-react';
 import bppData from '@/data/bpp-data.json';
 
@@ -10,6 +10,7 @@ const sanitizeInput = (value: string): string =>
 
 export default function DocumentCenter() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('Semua');
   const [modalData, setModalData] = useState<{
     title: string;
     size: string;
@@ -18,6 +19,18 @@ export default function DocumentCenter() {
     format: string;
   } | null>(null);
   const [toastMsg, setToastMsg] = useState<string | null>(null);
+  const toastTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Dynamically derive distinct categories from bppData.documents while preserving order
+  const categories = [
+    'Semua',
+    ...Array.from(new Set(bppData.documents.map((d) => d.category))),
+  ];
+
+  const getCategoryCount = (cat: string) => {
+    if (cat === 'Semua') return bppData.documents.length;
+    return bppData.documents.filter((d) => d.category === cat).length;
+  };
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -37,10 +50,23 @@ export default function DocumentCenter() {
     };
   }, [modalData]);
 
+  // Clean up pending toast timers on unmount
+  useEffect(() => {
+    return () => {
+      if (toastTimeoutRef.current) {
+        clearTimeout(toastTimeoutRef.current);
+      }
+    };
+  }, []);
+
   const triggerToast = (msg: string) => {
+    if (toastTimeoutRef.current) {
+      clearTimeout(toastTimeoutRef.current);
+    }
     setToastMsg(msg);
-    setTimeout(() => {
+    toastTimeoutRef.current = setTimeout(() => {
       setToastMsg(null);
+      toastTimeoutRef.current = null;
     }, 3000);
   };
 
@@ -99,16 +125,22 @@ export default function DocumentCenter() {
     window.print();
   };
 
-  const filteredDocs = bppData.documents.filter(
-    (doc) =>
-      doc.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      doc.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      doc.category.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const trimmedQuery = searchQuery.trim().toLowerCase();
+  const filteredDocs = bppData.documents.filter((doc) => {
+    const matchesCategory =
+      selectedCategory === 'Semua' || doc.category === selectedCategory;
+    const matchesSearch =
+      trimmedQuery === '' ||
+      doc.title.toLowerCase().includes(trimmedQuery) ||
+      doc.description.toLowerCase().includes(trimmedQuery) ||
+      doc.category.toLowerCase().includes(trimmedQuery);
+
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <section id="dokumen" className="py-24 bg-white border-b border-slate-200/70">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <span className="text-[#B8962E] font-bold text-xs uppercase tracking-widest">Dokumen Resmi</span>
@@ -118,8 +150,8 @@ export default function DocumentCenter() {
           </p>
         </div>
 
-        {/* Search Bar & Filter */}
-        <div className="max-w-xl mx-auto relative">
+        {/* Search Bar & Category Tabs */}
+        <div className="space-y-4 max-w-2xl mx-auto">
           <div className="relative flex items-center">
             <Search className="w-4 h-4 text-slate-400 absolute left-4 pointer-events-none" />
             <input
@@ -140,19 +172,67 @@ export default function DocumentCenter() {
               </button>
             )}
           </div>
+
+          {/* Interactive Category Filter Pills */}
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-1" role="tablist" aria-label="Filter Kategori Dokumen">
+            {categories.map((cat) => {
+              const count = getCategoryCount(cat);
+              const isSelected = selectedCategory === cat;
+              return (
+                <button
+                  key={cat}
+                  type="button"
+                  role="tab"
+                  aria-selected={isSelected}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all duration-200 flex items-center space-x-1.5 cursor-pointer ${
+                    isSelected
+                      ? 'bg-[#0c35a6] text-white shadow-md shadow-[#0c35a6]/25 border border-[#0c35a6]'
+                      : 'bg-[#FAFCFF] text-slate-600 hover:text-[#0c35a6] hover:bg-blue-50/70 border border-slate-200/90 hover:border-[#0c35a6]/30'
+                  }`}
+                >
+                  <span>{cat}</span>
+                  <span
+                    className={`text-[10px] px-1.5 py-0.5 rounded-md font-extrabold ${
+                      isSelected
+                        ? 'bg-white/20 text-white'
+                        : 'bg-slate-200/70 text-slate-600'
+                    }`}
+                  >
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Document Grid Cards */}
         {filteredDocs.length === 0 ? (
-          <div className="text-center py-12 bg-[#FAFCFF] rounded-2xl border border-dashed border-slate-300">
-            <p className="text-xs text-slate-500 font-semibold">Tidak ada dokumen yang sesuai dengan kata kunci &ldquo;{searchQuery}&rdquo;.</p>
-            <button
-              type="button"
-              onClick={() => setSearchQuery('')}
-              className="mt-3 text-xs font-bold text-[#0c35a6] hover:underline cursor-pointer"
-            >
-              Reset Pencarian
-            </button>
+          <div className="text-center py-12 bg-[#FAFCFF] rounded-2xl border border-dashed border-slate-300 max-w-lg mx-auto p-6 space-y-3">
+            <p className="text-xs text-slate-500 font-semibold">
+              Tidak ada dokumen yang sesuai dengan kriteria filter saat ini.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
+              {selectedCategory !== 'Semua' && (
+                <button
+                  type="button"
+                  onClick={() => setSelectedCategory('Semua')}
+                  className="px-3 py-1.5 rounded-lg bg-blue-50 text-[#0c35a6] border border-blue-200/80 text-xs font-bold hover:bg-blue-100 transition-colors cursor-pointer"
+                >
+                  Lihat Semua Kategori
+                </button>
+              )}
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery('')}
+                  className="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-200 text-xs font-bold hover:bg-slate-200 transition-colors cursor-pointer"
+                >
+                  Hapus Kata Kunci
+                </button>
+              )}
+            </div>
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -238,7 +318,6 @@ export default function DocumentCenter() {
           onClick={() => setModalData(null)}
           className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm cursor-pointer"
           role="presentation"
-          aria-hidden="false"
         >
           <div
             onClick={(e) => e.stopPropagation()}

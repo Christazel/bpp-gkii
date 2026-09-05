@@ -1,7 +1,13 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Gabarito } from 'next/font/google';
 import bppData from '@/data/bpp-data.json';
 import './globals.css';
+
+export const viewport: Viewport = {
+  themeColor: '#06195c',
+  width: 'device-width',
+  initialScale: 1,
+};
 
 const gabarito = Gabarito({
   subsets: ['latin'],
@@ -39,6 +45,9 @@ const organizationJsonLd = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://bpp-gkii.vercel.app'),
+  alternates: {
+    canonical: '/',
+  },
   title: 'BPP GKII | Portal Resmi Badan Pengurus Pusat Gereja Kemah Injil Indonesia',
   description: 'Portal Kelembagaan, Regulasi, Tata Gereja (TGTRT), Surat Edaran BPP, dan Layanan Resmi Badan Pengurus Pusat Gereja Kemah Injil Indonesia (BPP GKII).',
   keywords: [
