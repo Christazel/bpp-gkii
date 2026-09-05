@@ -94,7 +94,6 @@ export default function Officers() {
           onClick={() => setOrganigramModalOpen(false)}
           className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm cursor-pointer"
           role="presentation"
-          aria-hidden="false"
         >
           <div
             onClick={(e) => e.stopPropagation()}
