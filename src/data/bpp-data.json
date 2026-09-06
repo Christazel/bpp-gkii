@@ -81,6 +81,8 @@
       "title": "BPW Wilayah I Papua",
       "leader": "Dalam Konfirmasi SK BPW",
       "group": "papua",
+      "island": "Papua",
+      "coverage": "Provinsi Papua: Kota Jayapura, Kab. Jayapura, Keerom, Sarmi, Mamberamo Raya",
       "churchesCount": "Dalam Verifikasi Data",
       "address": "Sekretariat BPW Wilayah I Papua",
       "contact": "Sekretariat BPP (021-31902510)"
@@ -91,6 +93,8 @@
       "title": "BPW Wilayah II Papua",
       "leader": "Dalam Konfirmasi SK BPW",
       "group": "papua",
+      "island": "Papua",
+      "coverage": "Provinsi Papua Pegunungan: Jayawijaya, Yahukimo, Tolikara, Lanny Jaya, Nduga, Yalimo",
       "churchesCount": "Dalam Verifikasi Data",
       "address": "Sekretariat BPW Wilayah II Papua",
       "contact": "Sekretariat BPP (021-31902510)"
@@ -101,6 +105,8 @@
       "title": "BPW Wilayah III Papua",
       "leader": "Dalam Konfirmasi SK BPW",
       "group": "papua",
+      "island": "Papua",
+      "coverage": "Provinsi Papua Tengah: Nabire, Paniai, Deiyai, Dogiyai, Intan Jaya, Puncak, Mimika",
       "churchesCount": "Dalam Verifikasi Data",
       "address": "Sekretariat BPW Wilayah III Papua",
       "contact": "Sekretariat BPP (021-31902510)"
@@ -111,6 +117,8 @@
       "title": "BPW Wilayah IV Papua",
       "leader": "Dalam Konfirmasi SK BPW",
       "group": "papua",
+      "island": "Papua",
+      "coverage": "Papua Barat & Papua Barat Daya: Manokwari, Sorong, Fakfak, Kaimana, Raja Ampat",
       "churchesCount": "Dalam Verifikasi Data",
       "address": "Sekretariat BPW Wilayah IV Papua",
       "contact": "Sekretariat BPP (021-31902510)"
@@ -121,6 +129,8 @@
       "title": "BPW Wilayah Indonesia Timur",
       "leader": "Dalam Konfirmasi SK BPW",
       "group": "sulawesi",
+      "island": "Sulawesi & Timur",
+      "coverage": "Maluku, Maluku Utara, dan Papua Selatan (Merauke, Boven Digoel, Mappi, Asmat)",
       "churchesCount": "Dalam Verifikasi Data",
       "address": "Sekretariat BPW Indonesia Timur",
       "contact": "Sekretariat BPP (021-31902510)"
@@ -131,6 +141,8 @@
       "title": "BPW Wilayah Bali Nusra",
       "leader": "Dalam Konfirmasi SK BPW",
       "group": "sulawesi",
+      "island": "Sulawesi & Timur",
+      "coverage": "Provinsi Bali, Nusa Tenggara Barat (NTB), dan Nusa Tenggara Timur (NTT)",
       "churchesCount": "Dalam Verifikasi Data",
       "address": "Sekretariat BPW Bali Nusra",
       "contact": "Sekretariat BPP (021-31902510)"
@@ -141,6 +153,8 @@
       "title": "BPW Wilayah Sulut",
       "leader": "Dalam Konfirmasi SK BPW",
       "group": "sulawesi",
+      "island": "Sulawesi & Timur",
+      "coverage": "Sulawesi Utara, Gorontalo, Sulawesi Tengah, Sulawesi Selatan, Sulbar, dan Sultra",
       "churchesCount": "Dalam Verifikasi Data",
       "address": "Sekretariat BPW Sulut",
       "contact": "Sekretariat BPP (021-31902510)"
@@ -151,6 +165,8 @@
       "title": "BPW Wilayah Jawa Sumatera",
       "leader": "Dalam Konfirmasi SK BPW",
       "group": "jawa",
+      "island": "Jawa & Sumatera",
+      "coverage": "DKI Jakarta, Banten, Jawa Barat, dan Seluruh Provinsi di Pulau Sumatera",
       "churchesCount": "Dalam Verifikasi Data",
       "address": "Sekretariat BPW Jawa Sumatera",
       "contact": "Sekretariat BPP (021-31902510)"
@@ -161,6 +177,8 @@
       "title": "BPW Wilayah Jawa",
       "leader": "Dalam Konfirmasi SK BPW",
       "group": "jawa",
+      "island": "Jawa & Sumatera",
+      "coverage": "Jawa Tengah, Daerah Istimewa Yogyakarta (DIY), dan Jawa Timur",
       "churchesCount": "Dalam Verifikasi Data",
       "address": "Sekretariat BPW Jawa",
       "contact": "Sekretariat BPP (021-31902510)"
@@ -171,6 +189,8 @@
       "title": "BPW Wilayah I Kalimantan Barat",
       "leader": "Dalam Konfirmasi SK BPW",
       "group": "kalimantan",
+      "island": "Kalimantan",
+      "coverage": "Kalbar Bagian Barat & Pesisir: Pontianak, Kubu Raya, Mempawah, Singkawang, Sambas, Bengkayang, Landak",
       "churchesCount": "Dalam Verifikasi Data",
       "address": "Sekretariat BPW I Kalbar",
       "contact": "Sekretariat BPP (021-31902510)"
@@ -181,6 +201,8 @@
       "title": "BPW Wilayah II Kalimantan Barat",
       "leader": "Dalam Konfirmasi SK BPW",
       "group": "kalimantan",
+      "island": "Kalimantan",
+      "coverage": "Kalbar Bagian Hulu & Selatan: Sanggau, Sekadau, Sintang, Melawi, Kapuas Hulu, Ketapang, Kayong Utara",
       "churchesCount": "Dalam Verifikasi Data",
       "address": "Sekretariat BPW II Kalbar",
       "contact": "Sekretariat BPP (021-31902510)"
@@ -191,6 +213,8 @@
       "title": "BPW Wilayah Kalimantan Utara",
       "leader": "Dalam Konfirmasi SK BPW",
       "group": "kalimantan",
+      "island": "Kalimantan",
+      "coverage": "Provinsi Kalimantan Utara dan Kalimantan Timur (Tarakan, Nunukan, Malinau, Bulungan, Samarinda, Balikpapan)",
       "churchesCount": "Dalam Verifikasi Data",
       "address": "Sekretariat BPW Kaltara",
       "contact": "Sekretariat BPP (021-31902510)"
@@ -201,6 +225,8 @@
       "title": "BPW Wilayah Kalimantan Tengah",
       "leader": "Dalam Konfirmasi SK BPW",
       "group": "kalimantan",
+      "island": "Kalimantan",
+      "coverage": "Provinsi Kalimantan Tengah dan Kalimantan Selatan (Palangka Raya, Kotawaringin, Barito, Kapuas, Banjarmasin)",
       "churchesCount": "Dalam Verifikasi Data",
       "address": "Sekretariat BPW Kalteng",
       "contact": "Sekretariat BPP (021-31902510)"
