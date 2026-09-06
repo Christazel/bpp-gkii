@@ -90,7 +90,7 @@ export default function RegionalDirectory() {
                       >
                         <span>{island}</span>
                         <span
-                          className={`text-[9px] px-1 py-0.2 rounded font-extrabold ${
+                          className={`text-[9px] px-1 py-0.5 rounded font-extrabold ${
                             isSelected ? 'bg-white/20 text-white' : 'bg-slate-200/80 text-slate-500'
                           }`}
                         >
