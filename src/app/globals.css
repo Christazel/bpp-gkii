@@ -43,6 +43,59 @@
   animation: pulseGlow 5s ease-in-out infinite;
 }
 
+/* ─── Tailwind animate-in / animate-out system ──────────────────────────────
+   Used across: Navbar mobile menu, DocumentCenter modal, Officers modal,
+   PressReleaseSection modal, RegionalDirectory panel, ServiceWorkerRegister.
+   These utilities mirror the tailwindcss-animate pattern but are defined
+   natively here so they work without an external plugin dependency.          */
+
+@keyframes fade-in-animation {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes zoom-in-95-animation {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slide-in-from-top-2-animation {
+  from { opacity: 0; transform: translateY(-0.5rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-from-bottom-3-animation {
+  from { opacity: 0; transform: translateY(0.75rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Base .animate-in sets animation-fill-mode and duration (overridable via duration-*) */
+.animate-in {
+  animation-fill-mode: both;
+  animation-duration: 200ms;
+  animation-timing-function: ease-out;
+}
+
+.animate-in.fade-in {
+  animation-name: fade-in-animation;
+}
+
+.animate-in.zoom-in-95 {
+  animation-name: zoom-in-95-animation;
+}
+
+.animate-in.slide-in-from-top-2 {
+  animation-name: slide-in-from-top-2-animation;
+}
+
+.animate-in.slide-in-from-bottom-3 {
+  animation-name: slide-in-from-bottom-3-animation;
+}
+
+/* duration-* overrides — matches Tailwind's ms scale used in components */
+.animate-in.duration-200 { animation-duration: 200ms; }
+.animate-in.duration-300 { animation-duration: 300ms; }
+
 /* Premium skeleton shimmer — replaces generic pulse on loading states.
    Uses a subtle left-to-right sweep consistent with BPP GKII card colors. */
 .animate-shimmer {
