@@ -21,7 +21,7 @@ const nextConfig = {
     // - wa.me for WhatsApp floating button
     // - kemah-injil.org for external links
     // Security: frame-src 'none' explicitly blocks loading any iframe from external origins
-    // Security: worker-src/child-src 'none' blocks Web Workers & nested browsing contexts
+    // Security: worker-src/child-src 'self' allows same-origin Service Worker (PWA) while blocking external workers
     // Security: CSP-Report-Only mirrors the enforced policy for passive violation monitoring
     const cspDirectives = [
       "default-src 'self'",
@@ -30,9 +30,9 @@ const nextConfig = {
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob: https://kemah-injil.org",
       "frame-src 'none'",
-      // Security: block Web Workers and nested browsing contexts from loading external code
-      "worker-src 'none'",
-      "child-src 'none'",
+      // Security: allow same-origin Service Worker for offline resilience while blocking external scripts
+      "worker-src 'self'",
+      "child-src 'self'",
       // Security: restrict manifest.json loading to same-origin only
       "manifest-src 'self'",
       "connect-src 'self'",
@@ -76,6 +76,23 @@ const nextConfig = {
     ].join(', ');
 
     return [
+      {
+        source: '/sw.js',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/javascript; charset=utf-8',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate',
+          },
+          {
+            key: 'Service-Worker-Allowed',
+            value: '/',
+          },
+        ],
+      },
       {
         source: '/(.*)',
         headers: [
