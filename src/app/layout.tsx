@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Gabarito } from 'next/font/google';
 import bppData from '@/data/bpp-data.json';
+import ServiceWorkerRegister from '@/components/ServiceWorkerRegister';
 import './globals.css';
 
 export const viewport: Viewport = {
@@ -118,7 +119,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
       </head>
-      <body className="font-sans antialiased bg-[#FAFCFF] text-slate-900">{children}</body>
+      <body className="font-sans antialiased bg-[#FAFCFF] text-slate-900">
+        {children}
+        <ServiceWorkerRegister />
+      </body>
     </html>
   );
 }
