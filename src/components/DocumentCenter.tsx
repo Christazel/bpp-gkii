@@ -166,6 +166,7 @@ export default function DocumentCenter() {
               <button
                 type="button"
                 onClick={() => setSearchQuery('')}
+                aria-label="Hapus kata kunci pencarian"
                 className="absolute right-3 p-1 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100"
               >
                 <X className="w-3.5 h-3.5" />
@@ -271,6 +272,7 @@ export default function DocumentCenter() {
                 <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-2 relative z-10">
                   <button
                     type="button"
+                    aria-label={`Preview ${doc.title}`}
                     onClick={() =>
                       setModalData({
                         title: doc.title,

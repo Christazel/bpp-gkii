@@ -51,7 +51,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a href="#wilayah" className="hover:text-[#D4AF37] transition-colors inline-block">
-                    Direktori 13 Wilayah BPW
+                    Direktori {bppData.regions.length} Wilayah BPW
                   </a>
                 </li>
               </ul>
