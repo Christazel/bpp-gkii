@@ -39,6 +39,7 @@ export default function ServiceWorkerRegister() {
   useEffect(() => {
     if (!prevOnlineRef.current && isOnline) {
       setShowOnlineToast(true);
+      setIsDismissed(false);
       if (onlineTimerRef.current) clearTimeout(onlineTimerRef.current);
       onlineTimerRef.current = setTimeout(() => {
         setShowOnlineToast(false);
@@ -151,7 +152,7 @@ export default function ServiceWorkerRegister() {
               type="button"
               onClick={() => setIsDismissed(true)}
               aria-label="Tutup pemberitahuan offline"
-              className="p-1 text-slate-300 hover:text-white rounded-md hover:bg-white/10 transition-colors"
+              className="p-1 text-slate-300 hover:text-white rounded-md hover:bg-white/10 transition-colors cursor-pointer"
             >
               <X className="w-3.5 h-3.5" />
             </button>
@@ -205,7 +206,7 @@ export default function ServiceWorkerRegister() {
             <button
               type="button"
               onClick={handleUpdate}
-              className="px-2.5 py-1.5 bg-[#B8962E] hover:bg-[#D4AF37] text-[#06195c] font-extrabold text-[11px] rounded-md transition-colors shrink-0 shadow"
+              className="px-2.5 py-1.5 bg-[#B8962E] hover:bg-[#D4AF37] text-[#06195c] font-extrabold text-[11px] rounded-md transition-colors shrink-0 shadow cursor-pointer"
             >
               Perbarui
             </button>
