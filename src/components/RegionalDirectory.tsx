@@ -48,7 +48,7 @@ export default function RegionalDirectory() {
                   <Compass className="w-3.5 h-3.5 mr-1.5 text-[#B8962E]" /> Pemetaan Kerja Wilayah
                 </span>
                 <h2 className="text-2xl font-extrabold text-[#0c35a6]">
-                  Direktori 13 Wilayah BPW
+                  Direktori {bppData.regions.length} Wilayah BPW
                 </h2>
                 <p className="text-slate-500 text-xs leading-relaxed pt-1">
                   Pilih gugus pulau atau wilayah di bawah ini untuk melihat rincian Sekretariat, Ketua, dan cakupan teritorial.
