@@ -112,6 +112,54 @@ export default function Loading() {
           </div>
         </section>
 
+        {/* Regional Directory Skeleton */}
+        <section className="max-w-7xl mx-auto px-4 pt-8">
+          <div className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-10 shadow-lg animate-shimmer">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              {/* Left Column Skeleton */}
+              <div className="lg:col-span-5 space-y-4 pr-0 lg:pr-6 lg:border-r border-slate-200/80">
+                <div className="space-y-2">
+                  <div className="w-32 h-3.5 bg-amber-100/80 rounded-md"></div>
+                  <div className="w-56 h-7 bg-slate-200/70 rounded-xl"></div>
+                  <div className="w-full h-4 bg-slate-100 rounded"></div>
+                </div>
+                {/* Island pills skeleton */}
+                <div className="flex flex-wrap gap-1.5 pt-2">
+                  <div className="h-6 w-16 bg-slate-100 rounded-lg"></div>
+                  <div className="h-6 w-20 bg-slate-100 rounded-lg"></div>
+                  <div className="h-6 w-28 bg-slate-100 rounded-lg"></div>
+                  <div className="h-6 w-24 bg-slate-100 rounded-lg"></div>
+                </div>
+                {/* Select dropdown skeleton */}
+                <div className="h-11 w-full bg-slate-100 rounded-xl"></div>
+                {/* Quick select pills skeleton */}
+                <div className="flex flex-wrap gap-1.5 pt-2">
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((n) => (
+                    <div key={n} className="h-6 w-12 bg-slate-100 rounded-lg"></div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Column Skeleton */}
+              <div className="lg:col-span-7 space-y-5">
+                <div className="flex justify-between items-center pb-4 border-b border-slate-200/80">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-20 h-7 bg-amber-100/80 rounded-lg"></div>
+                    <div className="w-48 h-6 bg-slate-200/70 rounded-lg"></div>
+                  </div>
+                  <div className="w-32 h-7 bg-blue-50 rounded-xl"></div>
+                </div>
+                <div className="h-24 bg-[#FAFCFF] rounded-2xl border border-slate-200/90 border-l-4 border-l-[#B8962E]"></div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                  <div className="h-20 bg-[#FAFCFF] rounded-2xl border border-slate-200/80"></div>
+                  <div className="h-20 bg-[#FAFCFF] rounded-2xl border border-slate-200/80"></div>
+                  <div className="h-20 bg-[#FAFCFF] rounded-2xl border border-slate-200/80"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* STT Affiliasi Skeleton */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">

@@ -35,7 +35,7 @@ const nextConfig = {
       "child-src 'self'",
       // Security: restrict manifest.json loading to same-origin only
       "manifest-src 'self'",
-      "connect-src 'self'",
+      "connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com",
       "media-src 'self'",
       "object-src 'none'",
       "base-uri 'self'",

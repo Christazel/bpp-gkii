@@ -162,7 +162,7 @@ self.addEventListener('fetch', (event) => {
   const isStaticAsset =
     url.origin === self.location.origin &&
     (url.pathname.startsWith('/_next/static/') ||
-      url.pathname.match(/\.(png|jpg|jpeg|svg|webp|ico|woff2|woff|ttf|css|js)$/i));
+      url.pathname.match(/\.(png|jpg|jpeg|svg|webp|ico|woff2|woff|ttf|css|js|json)$/i));
 
   const isGoogleFont =
     url.origin === 'https://fonts.googleapis.com' ||

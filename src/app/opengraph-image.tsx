@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+import bppData from '@/data/bpp-data.json';
 
 export const alt = 'BPP GKII | Portal Resmi Badan Pengurus Pusat Gereja Kemah Injil Indonesia';
 export const size = {
@@ -72,7 +73,7 @@ export default async function Image() {
             zIndex: 10,
           }}
         >
-          <span>PORTAL RESMI KELEMBAGAAN BPP GKII</span>
+          <span>{bppData.legalities.portalBadge}</span>
         </div>
 
         {/* Center Main Title */}
@@ -116,7 +117,7 @@ export default async function Image() {
               marginTop: '8px',
             }}
           >
-            Akses Publik Resmi Tata Gereja (TGTRT), Surat Edaran BPP, Form Pendataan, dan Informasi Direktori 13 Wilayah BPW
+            {`Akses Publik Resmi Tata Gereja (TGTRT), Surat Edaran BPP, Form Pendataan, dan Informasi Direktori ${bppData.regions.length} Wilayah BPW`}
           </div>
         </div>
 
@@ -135,9 +136,9 @@ export default async function Image() {
             zIndex: 10,
           }}
         >
-          <div>DKI Jakarta • Sekretariat Jenderal BPP</div>
+          <div>{`${bppData.legalities.secretariatCity} Jakarta • Sekretariat Jenderal BPP`}</div>
           <div style={{ color: '#D4AF37', fontWeight: 800 }}>https://bpp-gkii.vercel.app</div>
-          <div>Bebas Akses Tanpa Login</div>
+          <div>{bppData.legalities.accessNotice}</div>
         </div>
       </div>
     ),
