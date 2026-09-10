@@ -213,6 +213,47 @@ export default function Loading() {
             </div>
           </div>
         </section>
+
+        {/* FAQ Section Skeleton */}
+        <section className="py-24 bg-[#FAFCFF] border-b border-slate-200/70">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div className="text-center space-y-2 max-w-xl mx-auto">
+              <div className="w-40 h-4 bg-amber-100 rounded mx-auto animate-pulse"></div>
+              <div className="w-80 h-8 bg-slate-200 rounded-xl mx-auto animate-pulse"></div>
+              <div className="w-96 h-4 bg-slate-200/80 rounded mx-auto animate-pulse"></div>
+            </div>
+
+            {/* Category filter pills skeleton */}
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <div className="h-8 w-20 bg-slate-200/70 rounded-xl animate-pulse"></div>
+              <div className="h-8 w-36 bg-slate-200/70 rounded-xl animate-pulse"></div>
+              <div className="h-8 w-36 bg-slate-200/70 rounded-xl animate-pulse"></div>
+              <div className="h-8 w-36 bg-slate-200/70 rounded-xl animate-pulse"></div>
+              <div className="h-8 w-32 bg-slate-200/70 rounded-xl animate-pulse"></div>
+            </div>
+
+            {/* Accordion items skeleton */}
+            <div className="space-y-3.5">
+              {[1, 2, 3, 4].map((i) => (
+                <div
+                  key={i}
+                  className="p-6 rounded-2xl bg-white border border-slate-200 shadow-2xs space-y-3 animate-shimmer"
+                >
+                  <div className="flex justify-between items-center">
+                    <div className="space-y-2 flex-1 pr-4">
+                      <div className="w-28 h-4 bg-amber-100/80 rounded-md"></div>
+                      <div className="w-3/4 h-5 bg-slate-200/70 rounded-lg"></div>
+                    </div>
+                    <div className="w-8 h-8 rounded-full bg-slate-100"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Consultation help box skeleton */}
+            <div className="h-28 rounded-3xl bg-[#06195c]/80 animate-pulse border border-[#D4AF37]/30"></div>
+          </div>
+        </section>
       </main>
 
     </div>

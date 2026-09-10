@@ -10,6 +10,7 @@ const Officers = dynamic(() => import('@/components/Officers'));
 const RegionalDirectory = dynamic(() => import('@/components/RegionalDirectory'));
 const SeminarySection = dynamic(() => import('@/components/SeminarySection'));
 const PressReleaseSection = dynamic(() => import('@/components/PressReleaseSection'));
+const FaqSection = dynamic(() => import('@/components/FaqSection'));
 const Footer = dynamic(() => import('@/components/Footer'));
 // ScrollToTop is 'use client' and its window usage is inside useEffect (client-only)
 // Regular dynamic() is sufficient — ssr:false is not allowed in Server Components
@@ -32,6 +33,9 @@ export default function Home() {
             <PressReleaseSection />
           </div>
         </section>
+
+        {/* FAQ Tanya Jawab Kelembagaan */}
+        <FaqSection />
       </main>
 
       <Footer />
