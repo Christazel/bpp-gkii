@@ -6,6 +6,7 @@ import Hero from '@/components/Hero';
 // HTML is still SSR'd (no ssr:false) so SEO and initial paint are unaffected.
 // Only client-side hydration JS is deferred, reducing initial TBT significantly.
 const DocumentCenter = dynamic(() => import('@/components/DocumentCenter'));
+const AdministrationProcess = dynamic(() => import('@/components/AdministrationProcess'));
 const Officers = dynamic(() => import('@/components/Officers'));
 const RegionalDirectory = dynamic(() => import('@/components/RegionalDirectory'));
 const SeminarySection = dynamic(() => import('@/components/SeminarySection'));
@@ -23,6 +24,7 @@ export default function Home() {
       <main>
         <Hero />
         <DocumentCenter />
+        <AdministrationProcess />
         <Officers />
         <RegionalDirectory />
 

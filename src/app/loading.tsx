@@ -94,6 +94,36 @@ export default function Loading() {
           </div>
         </section>
 
+        {/* Administration Process Skeleton */}
+        <section className="max-w-7xl mx-auto px-4 space-y-12 pt-8">
+          <div className="text-center space-y-2 max-w-xl mx-auto">
+            <div className="w-36 h-4 bg-amber-100 rounded mx-auto animate-pulse"></div>
+            <div className="w-80 h-8 bg-slate-200 rounded-xl mx-auto animate-pulse"></div>
+            <div className="w-96 h-4 bg-slate-200/70 rounded mx-auto animate-pulse"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="p-6 rounded-2xl bg-[#FAFCFF] border border-slate-200/90 space-y-4 shadow-xs animate-shimmer">
+                <div className="flex justify-between items-center">
+                  <div className="w-12 h-6 bg-blue-100/80 rounded-md"></div>
+                  <div className="w-10 h-10 bg-slate-100 rounded-xl"></div>
+                </div>
+                <div className="w-24 h-4 bg-amber-100/80 rounded"></div>
+                <div className="space-y-2">
+                  <div className="w-3/4 h-5 bg-slate-200/60 rounded-lg"></div>
+                  <div className="w-full h-12 bg-slate-100 rounded"></div>
+                </div>
+                <div className="pt-4 border-t border-slate-100 flex justify-between items-center">
+                  <div className="w-28 h-4 bg-blue-100/80 rounded"></div>
+                  <div className="w-10 h-3 bg-slate-100 rounded"></div>
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* Governance assurance strip skeleton */}
+          <div className="h-28 rounded-3xl bg-[#06195c]/80 animate-pulse border border-[#D4AF37]/30"></div>
+        </section>
+
         {/* Officers Grid Skeleton */}
         <section className="max-w-7xl mx-auto px-4 space-y-8 pt-8">
           <div className="text-center space-y-2 max-w-xl mx-auto">
