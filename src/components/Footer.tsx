@@ -104,11 +104,6 @@ export default function Footer() {
                     Warta & Siaran Pers BPP
                   </a>
                 </li>
-                <li>
-                  <a href="#faq" className="hover:text-white transition-colors inline-block">
-                    Pusat Bantuan / FAQ
-                  </a>
-                </li>
               </ul>
             </div>
           </div>

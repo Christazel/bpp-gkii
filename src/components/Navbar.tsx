@@ -83,10 +83,10 @@ export default function Navbar() {
                 <span className="absolute bottom-1 left-3.5 right-3.5 h-0.5 bg-[#0c35a6] scale-x-0 group-hover:scale-x-100 transition-transform origin-left rounded-full"></span>
               </a>
               <a
-                href="#faq"
+                href="#alur-layanan"
                 className="px-3.5 py-2 text-xs font-bold text-slate-700 hover:text-[#0c35a6] hover:bg-blue-50/60 rounded-xl transition-all relative group"
               >
-                FAQ
+                Alur Layanan
                 <span className="absolute bottom-1 left-3.5 right-3.5 h-0.5 bg-[#0c35a6] scale-x-0 group-hover:scale-x-100 transition-transform origin-left rounded-full"></span>
               </a>
             </nav>
@@ -138,11 +138,11 @@ export default function Navbar() {
             STT & Warta
           </a>
           <a
-            href="#faq"
+            href="#alur-layanan"
             onClick={() => setMobileMenuOpen(false)}
             className="block px-4 py-2.5 text-sm font-semibold text-slate-800 hover:text-[#0c35a6] hover:bg-slate-50 rounded-xl"
           >
-            Pusat Bantuan (FAQ)
+            Alur Layanan
           </a>
         </div>
       )}
