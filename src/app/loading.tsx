@@ -241,44 +241,6 @@ export default function Loading() {
             </div>
           </div>
         </section>
-
-        {/* FAQ Section Skeleton */}
-        <section className="py-14 sm:py-16 bg-[#FAFCFF] border-b border-slate-200/70">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-            <div className="text-center space-y-2 max-w-xl mx-auto">
-              <div className="w-40 h-4 bg-amber-100 rounded mx-auto animate-pulse"></div>
-              <div className="w-72 h-8 bg-slate-200 rounded-xl mx-auto animate-pulse"></div>
-              <div className="w-80 h-4 bg-slate-200/80 rounded mx-auto animate-pulse"></div>
-            </div>
-
-            {/* Category filter pills skeleton */}
-            <div className="flex flex-wrap items-center justify-center gap-2">
-              <div className="h-7 w-16 bg-slate-200/70 rounded-xl animate-pulse"></div>
-              <div className="h-7 w-32 bg-slate-200/70 rounded-xl animate-pulse"></div>
-              <div className="h-7 w-32 bg-slate-200/70 rounded-xl animate-pulse"></div>
-              <div className="h-7 w-32 bg-slate-200/70 rounded-xl animate-pulse"></div>
-              <div className="h-7 w-28 bg-slate-200/70 rounded-xl animate-pulse"></div>
-            </div>
-
-            {/* Accordion items skeleton */}
-            <div className="space-y-2.5">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="p-4 sm:p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-2.5 animate-shimmer"
-                >
-                  <div className="flex justify-between items-center">
-                    <div className="space-y-1.5 flex-1 pr-4">
-                      <div className="w-24 h-3.5 bg-amber-100/80 rounded"></div>
-                      <div className="w-3/4 h-4 bg-slate-200/70 rounded"></div>
-                    </div>
-                    <div className="w-7 h-7 rounded-full bg-slate-100"></div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
       </main>
 
     </div>
