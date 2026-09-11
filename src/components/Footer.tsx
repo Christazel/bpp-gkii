@@ -45,6 +45,11 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
+                  <a href="#alur-layanan" className="hover:text-[#D4AF37] transition-colors inline-block">
+                    Alur Pelayanan Administrasi
+                  </a>
+                </li>
+                <li>
                   <a href="#dokumen" className="hover:text-[#D4AF37] transition-colors inline-block">
                     Form Pendataan Gereja Baru
                   </a>

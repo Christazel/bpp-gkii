@@ -315,6 +315,44 @@
       "question": "Bagaimana cara berkomunikasi langsung dengan Sekretariat Jenderal BPP GKII jika ada kendala di daerah?",
       "answer": "BPP GKII menyediakan layanan komunikasi terpadu melalui telepon kantor pusat (021-31902510), pesan WhatsApp resmi Sekretariat, atau kunjungan kedinasan langsung ke Gedung Pusat BPP GKII di Jl. Jambrut No. 24, Senen, Jakarta Pusat pada jam kerja operasional."
     }
+  ],
+  "serviceSteps": [
+    {
+      "step": "01",
+      "icon": "FileDown",
+      "title": "Unduh Formulir Mandiri",
+      "subtitle": "Pusat Dokumen Resmi",
+      "description": "Unduh formulir resmi (Form Pendataan Gereja Baru, SE Regulasi, Panduan Mutasi) secara mandiri, cepat, dan gratis tanpa perlu registrasi login.",
+      "actionLabel": "Buka Pusat Dokumen",
+      "actionHref": "#dokumen"
+    },
+    {
+      "step": "02",
+      "icon": "ClipboardCheck",
+      "title": "Validasi & Rekomendasi BPW",
+      "subtitle": "Tingkat Teritorial Wilayah",
+      "description": "Pengurus jemaat mengajukan kelengkapan berkas fisik/digital kepada Badan Pengurus Wilayah (BPW) setempat untuk verifikasi kelayakan teritorial.",
+      "actionLabel": "Lihat Wilayah BPW",
+      "actionHref": "#wilayah"
+    },
+    {
+      "step": "03",
+      "icon": "ShieldCheck",
+      "title": "Verifikasi Sekretariat Jenderal",
+      "subtitle": "Pemeriksaan Kantor Pusat",
+      "description": "Sekretariat Jenderal BPP GKII di Jakarta menelaah kesesuaian berkas terhadap ketetapan Tata Gereja & Tata Rumah Tangga (TGTRT) nasional.",
+      "actionLabel": "Profil Pengurus Pusat",
+      "actionHref": "#pengurus"
+    },
+    {
+      "step": "04",
+      "icon": "Award",
+      "title": "Penerbitan SK & Registrasi",
+      "subtitle": "Pengesahan Definitif Nasional",
+      "description": "Ketua Umum dan Sekretaris Umum menerbitkan SK resmi bernomor registrasi nasional, disahkan dan tercatat dalam arsip basis data pusat.",
+      "actionLabel": "Konsultasi Layanan",
+      "actionHref": "#kontak"
+    }
   ]
 }
 
