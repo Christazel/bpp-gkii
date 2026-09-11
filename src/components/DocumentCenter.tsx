@@ -139,8 +139,8 @@ export default function DocumentCenter() {
   });
 
   return (
-    <section id="dokumen" className="py-24 bg-white border-b border-slate-200/70">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+    <section id="dokumen" className="py-14 sm:py-16 bg-white border-b border-slate-200/70">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <span className="text-[#B8962E] font-bold text-xs uppercase tracking-widest">Dokumen Resmi</span>

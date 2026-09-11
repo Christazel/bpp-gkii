@@ -29,46 +29,43 @@ export default function Officers() {
   }, [organigramModalOpen]);
 
   return (
-    <section id="pengurus" className="py-24 bg-[#FAFCFF] border-b border-slate-200/70">
+    <section id="pengurus" className="py-14 sm:py-16 bg-white border-b border-slate-200/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-2">
+        <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
           <span className="text-[#B8962E] font-bold text-xs uppercase tracking-widest">Kelembagaan BPP</span>
-          <h2 className="text-3xl font-extrabold text-[#0c35a6]">Pengurus Pusat BPP GKII</h2>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0c35a6]">Pengurus Pusat BPP GKII</h2>
           <p className="text-slate-500 text-xs sm:text-sm">
             Pimpinan Inti Eksekutif Nasional Badan Pengurus Pusat Gereja Kemah Injil Indonesia.
           </p>
         </div>
 
         {/* 3 Core Officers Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {bppData.officers.map((off, idx) => (
             <div
               key={off.id}
-              className="bg-white rounded-2xl border border-slate-200/90 text-center p-8 hover:border-[#0c35a6] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden transform hover:-translate-y-1"
+              className="bg-[#FAFCFF] rounded-2xl border border-slate-200/90 text-center p-6 hover:border-[#0c35a6] hover:shadow-lg transition-all duration-200 flex flex-col justify-between group relative overflow-hidden"
             >
               {/* Top Accent Line */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0c35a6] via-[#D4AF37] to-[#06195c]"></div>
 
               {/* Watermark Number */}
-              <span className="absolute -bottom-4 -right-2 text-7xl font-black text-slate-100 select-none pointer-events-none group-hover:text-amber-100/60 transition-colors">
+              <span className="absolute -bottom-3 -right-2 text-6xl font-black text-slate-100 select-none pointer-events-none group-hover:text-amber-100/60 transition-colors">
                 0{idx + 1}
               </span>
 
               <div className="relative z-10">
-                {/* Avatar Icon Box with Gold Ring */}
-                <div className="relative w-20 h-20 mx-auto mb-5">
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-[#0c35a6] via-[#D4AF37] to-[#06195c] opacity-80 blur-xs group-hover:opacity-100 transition-opacity"></div>
-                  <div className="relative w-full h-full rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-[#0c35a6] shadow-sm">
-                    <UserCheck className="w-8 h-8 stroke-[1.75] text-[#0c35a6] group-hover:scale-110 transition-transform" />
-                  </div>
+                {/* Avatar Icon Box */}
+                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#0c35a6] group-hover:bg-[#0c35a6] group-hover:text-white transition-colors">
+                  <UserCheck className="w-7 h-7 stroke-[1.75]" />
                 </div>
 
-                <span className="text-[10px] font-black uppercase text-[#B8962E] tracking-wider px-3 py-1 rounded-full bg-amber-50 border border-amber-200/60 inline-block mb-3">
+                <span className="text-[10px] font-bold uppercase text-[#B8962E] tracking-wider px-2.5 py-0.5 rounded-full bg-amber-50 border border-amber-200/60 inline-block mb-2.5">
                   {off.role}
                 </span>
-                <h3 className="font-extrabold text-lg text-[#0c35a6] leading-snug group-hover:text-[#06195c] transition-colors">{off.name}</h3>
+                <h3 className="font-extrabold text-base sm:text-lg text-[#0c35a6] leading-snug group-hover:text-[#06195c] transition-colors">{off.name}</h3>
               </div>
-              <p className="text-xs text-slate-500 mt-5 pt-4 border-t border-slate-100 leading-relaxed font-medium relative z-10">
+              <p className="text-xs text-slate-500 mt-4 pt-3.5 border-t border-slate-200/60 leading-relaxed font-medium relative z-10">
                 {off.description}
               </p>
             </div>
@@ -76,11 +73,11 @@ export default function Officers() {
         </div>
 
         {/* Organigram CTA Button */}
-        <div className="mt-12 text-center">
+        <div className="mt-8 text-center">
           <button
             type="button"
             onClick={() => setOrganigramModalOpen(true)}
-            className="inline-flex items-center px-6 py-3.5 rounded-xl bg-white border border-slate-200 text-[#0c35a6] font-bold text-xs hover:border-[#D4AF37] hover:bg-[#F4F7FF] transition-all shadow-sm cursor-pointer"
+            className="inline-flex items-center px-5 py-2.5 rounded-xl bg-white border border-slate-200 text-[#0c35a6] font-bold text-xs hover:border-[#D4AF37] hover:bg-[#F4F7FF] transition-all shadow-xs cursor-pointer"
           >
             <Network className="w-4 h-4 mr-2 text-[#B8962E]" />
             <span>Lihat Organigram Lengkap (PDF)</span>

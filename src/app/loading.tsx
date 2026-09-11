@@ -23,32 +23,32 @@ export default function Loading() {
 
       <main className="space-y-16 py-10">
         {/* Hero Section Skeleton */}
-        <section className="max-w-4xl mx-auto text-center space-y-6 px-4 pt-12">
-          <div className="space-y-3">
-            <div className="w-4/5 max-w-2xl h-10 sm:h-12 bg-slate-200 rounded-2xl mx-auto animate-pulse"></div>
-            <div className="w-3/5 max-w-lg h-10 sm:h-12 bg-amber-200/50 rounded-2xl mx-auto animate-pulse"></div>
+        <section className="max-w-4xl mx-auto text-center space-y-5 px-4 pt-6">
+          <div className="space-y-2.5">
+            <div className="w-4/5 max-w-xl h-9 sm:h-10 bg-slate-200 rounded-2xl mx-auto animate-pulse"></div>
+            <div className="w-3/5 max-w-md h-9 sm:h-10 bg-amber-200/50 rounded-2xl mx-auto animate-pulse"></div>
           </div>
-          <div className="w-5/6 max-w-xl h-4 sm:h-5 bg-slate-200/80 rounded-lg mx-auto animate-pulse"></div>
+          <div className="w-5/6 max-w-lg h-4 bg-slate-200/80 rounded-lg mx-auto animate-pulse"></div>
 
           {/* Hero Buttons Skeleton */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <div className="w-44 h-12 bg-amber-200/70 rounded-xl animate-pulse"></div>
-            <div className="w-40 h-12 bg-slate-200 rounded-xl animate-pulse"></div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+            <div className="w-40 h-10 bg-amber-200/70 rounded-xl animate-pulse"></div>
+            <div className="w-36 h-10 bg-slate-200 rounded-xl animate-pulse"></div>
           </div>
 
           {/* Hero Stat Strip Skeleton */}
-          <div className="pt-8 max-w-2xl mx-auto">
-            <div className="grid grid-cols-3 gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
-              <div className="space-y-2 flex flex-col items-center">
-                <div className="w-12 h-6 bg-slate-200 rounded animate-pulse"></div>
+          <div className="pt-6 max-w-2xl mx-auto">
+            <div className="grid grid-cols-3 gap-2 p-3 rounded-xl bg-white border border-slate-200/80 shadow-xs">
+              <div className="space-y-1 flex flex-col items-center">
+                <div className="w-10 h-5 bg-slate-200 rounded animate-pulse"></div>
+                <div className="w-16 h-3 bg-slate-200 rounded animate-pulse"></div>
+              </div>
+              <div className="space-y-1 flex flex-col items-center border-x border-slate-200">
+                <div className="w-10 h-5 bg-amber-200 rounded animate-pulse"></div>
                 <div className="w-20 h-3 bg-slate-200 rounded animate-pulse"></div>
               </div>
-              <div className="space-y-2 flex flex-col items-center border-x border-slate-200">
-                <div className="w-12 h-6 bg-amber-200 rounded animate-pulse"></div>
-                <div className="w-24 h-3 bg-slate-200 rounded animate-pulse"></div>
-              </div>
-              <div className="space-y-2 flex flex-col items-center">
-                <div className="w-12 h-6 bg-slate-200 rounded animate-pulse"></div>
+              <div className="space-y-1 flex flex-col items-center">
+                <div className="w-10 h-5 bg-slate-200 rounded animate-pulse"></div>
                 <div className="w-20 h-3 bg-slate-200 rounded animate-pulse"></div>
               </div>
             </div>
@@ -95,33 +95,31 @@ export default function Loading() {
         </section>
 
         {/* Administration Process Skeleton */}
-        <section className="max-w-7xl mx-auto px-4 space-y-12 pt-8">
+        <section className="max-w-7xl mx-auto px-4 space-y-8 pt-6">
           <div className="text-center space-y-2 max-w-xl mx-auto">
             <div className="w-36 h-4 bg-amber-100 rounded mx-auto animate-pulse"></div>
-            <div className="w-80 h-8 bg-slate-200 rounded-xl mx-auto animate-pulse"></div>
-            <div className="w-96 h-4 bg-slate-200/70 rounded mx-auto animate-pulse"></div>
+            <div className="w-72 h-8 bg-slate-200 rounded-xl mx-auto animate-pulse"></div>
+            <div className="w-80 h-4 bg-slate-200/70 rounded mx-auto animate-pulse"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="p-6 rounded-2xl bg-[#FAFCFF] border border-slate-200/90 space-y-4 shadow-xs animate-shimmer">
+              <div key={i} className="p-5 rounded-2xl bg-white border border-slate-200/90 space-y-3.5 shadow-xs animate-shimmer">
                 <div className="flex justify-between items-center">
-                  <div className="w-12 h-6 bg-blue-100/80 rounded-md"></div>
-                  <div className="w-10 h-10 bg-slate-100 rounded-xl"></div>
+                  <div className="w-8 h-6 bg-blue-100/80 rounded-md"></div>
+                  <div className="w-8 h-8 bg-slate-100 rounded-lg"></div>
                 </div>
-                <div className="w-24 h-4 bg-amber-100/80 rounded"></div>
-                <div className="space-y-2">
+                <div className="w-20 h-4 bg-amber-100/80 rounded"></div>
+                <div className="space-y-1.5">
                   <div className="w-3/4 h-5 bg-slate-200/60 rounded-lg"></div>
-                  <div className="w-full h-12 bg-slate-100 rounded"></div>
+                  <div className="w-full h-10 bg-slate-100 rounded"></div>
                 </div>
-                <div className="pt-4 border-t border-slate-100 flex justify-between items-center">
-                  <div className="w-28 h-4 bg-blue-100/80 rounded"></div>
-                  <div className="w-10 h-3 bg-slate-100 rounded"></div>
+                <div className="pt-3 border-t border-slate-100 flex justify-between items-center">
+                  <div className="w-24 h-4 bg-blue-100/80 rounded"></div>
+                  <div className="w-4 h-3 bg-slate-100 rounded"></div>
                 </div>
               </div>
             ))}
           </div>
-          {/* Governance assurance strip skeleton */}
-          <div className="h-28 rounded-3xl bg-[#06195c]/80 animate-pulse border border-[#D4AF37]/30"></div>
         </section>
 
         {/* Officers Grid Skeleton */}
@@ -245,43 +243,40 @@ export default function Loading() {
         </section>
 
         {/* FAQ Section Skeleton */}
-        <section className="py-24 bg-[#FAFCFF] border-b border-slate-200/70">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <section className="py-14 sm:py-16 bg-[#FAFCFF] border-b border-slate-200/70">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="text-center space-y-2 max-w-xl mx-auto">
               <div className="w-40 h-4 bg-amber-100 rounded mx-auto animate-pulse"></div>
-              <div className="w-80 h-8 bg-slate-200 rounded-xl mx-auto animate-pulse"></div>
-              <div className="w-96 h-4 bg-slate-200/80 rounded mx-auto animate-pulse"></div>
+              <div className="w-72 h-8 bg-slate-200 rounded-xl mx-auto animate-pulse"></div>
+              <div className="w-80 h-4 bg-slate-200/80 rounded mx-auto animate-pulse"></div>
             </div>
 
             {/* Category filter pills skeleton */}
             <div className="flex flex-wrap items-center justify-center gap-2">
-              <div className="h-8 w-20 bg-slate-200/70 rounded-xl animate-pulse"></div>
-              <div className="h-8 w-36 bg-slate-200/70 rounded-xl animate-pulse"></div>
-              <div className="h-8 w-36 bg-slate-200/70 rounded-xl animate-pulse"></div>
-              <div className="h-8 w-36 bg-slate-200/70 rounded-xl animate-pulse"></div>
-              <div className="h-8 w-32 bg-slate-200/70 rounded-xl animate-pulse"></div>
+              <div className="h-7 w-16 bg-slate-200/70 rounded-xl animate-pulse"></div>
+              <div className="h-7 w-32 bg-slate-200/70 rounded-xl animate-pulse"></div>
+              <div className="h-7 w-32 bg-slate-200/70 rounded-xl animate-pulse"></div>
+              <div className="h-7 w-32 bg-slate-200/70 rounded-xl animate-pulse"></div>
+              <div className="h-7 w-28 bg-slate-200/70 rounded-xl animate-pulse"></div>
             </div>
 
             {/* Accordion items skeleton */}
-            <div className="space-y-3.5">
+            <div className="space-y-2.5">
               {[1, 2, 3, 4].map((i) => (
                 <div
                   key={i}
-                  className="p-6 rounded-2xl bg-white border border-slate-200 shadow-2xs space-y-3 animate-shimmer"
+                  className="p-4 sm:p-5 rounded-xl bg-white border border-slate-200 shadow-xs space-y-2.5 animate-shimmer"
                 >
                   <div className="flex justify-between items-center">
-                    <div className="space-y-2 flex-1 pr-4">
-                      <div className="w-28 h-4 bg-amber-100/80 rounded-md"></div>
-                      <div className="w-3/4 h-5 bg-slate-200/70 rounded-lg"></div>
+                    <div className="space-y-1.5 flex-1 pr-4">
+                      <div className="w-24 h-3.5 bg-amber-100/80 rounded"></div>
+                      <div className="w-3/4 h-4 bg-slate-200/70 rounded"></div>
                     </div>
-                    <div className="w-8 h-8 rounded-full bg-slate-100"></div>
+                    <div className="w-7 h-7 rounded-full bg-slate-100"></div>
                   </div>
                 </div>
               ))}
             </div>
-
-            {/* Consultation help box skeleton */}
-            <div className="h-28 rounded-3xl bg-[#06195c]/80 animate-pulse border border-[#D4AF37]/30"></div>
           </div>
         </section>
       </main>
